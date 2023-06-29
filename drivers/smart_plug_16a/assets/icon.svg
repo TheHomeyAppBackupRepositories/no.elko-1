@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="150" height="150" fill="none" version="1.1" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <clipPath id="clipPath1067">
+   <path d="m29 21c0-4.4183 3.5817-8 8-8h77c4.418 0 8 3.5817 8 8v54c0 7.1797-5.82 13-13 13h-67c-7.1797 0-13-5.8203-13-13z" display="none" fill="#fff" stroke="#000" stroke-width="4"/>
+   <path class="powerclip" d="m27 66h97v40h-97zm2-45v54c0 7.1797 5.8203 13 13 13h67c7.18 0 13-5.8203 13-13v-54c0-4.4183-3.582-8-8-8h-77c-4.4183 0-8 3.5817-8 8z" stroke="#000"/>
+  </clipPath>
+  <clipPath id="clipath_lpe_path-effect1097">
+   <path d="m29 21c0-4.4183 3.5817-8 8-8h77c4.418 0 8 3.5817 8 8v54c0 7.1797-5.82 13-13 13h-67c-7.1797 0-13-5.8203-13-13z" display="none" fill="#fff" stroke="#000" stroke-width="4"/>
+   <path class="powerclip" d="m27 66h97v40h-97zm2-45v54c0 7.1797 5.8203 13 13 13h67c7.18 0 13-5.8203 13-13v-54c0-4.4183-3.582-8-8-8h-77c-4.4183 0-8 3.5817-8 8z" display="block" stroke="#000"/>
+  </clipPath>
+  <clipPath id="clipPath1122">
+   <path x="34" y="73" width="83" height="26" rx="13" d="m47 73h57c7.202 0 13 5.798 13 13s-5.798 13-13 13h-57c-7.202 0-13-5.798-13-13s5.798-13 13-13z" clip-path="url(#clipath_lpe_path-effect1097)" display="none" fill="#fff" stroke="#000" stroke-width="4"/>
+   <path class="powerclip" d="m43 81h65v54h-65zm4-8c-7.202 0-13 5.798-13 13s5.798 13 13 13h57c7.202 0 13-5.798 13-13s-5.798-13-13-13z" stroke="#000"/>
+  </clipPath>
+ </defs>
+ <g fill="none" stroke="#000">
+  <g stroke-width="4">
+   <path x="50" y="88" width="51" height="40" rx="7" d="m57 88h37c3.878 0 7 3.122 7 7v26c0 3.878-3.122 7-7 7h-37c-3.878 0-7-3.122-7-7v-26c0-3.878 3.122-7 7-7z" clip-path="url(#clipPath1122)"/>
+   <path x="34" y="73" width="83" height="26" rx="13" d="m47 73h57c7.202 0 13 5.798 13 13s-5.798 13-13 13h-57c-7.202 0-13-5.798-13-13s5.798-13 13-13z" clip-path="url(#clipPath1067)"/>
+   <path d="m29 21c0-4.4183 3.5817-8 8-8h77c4.418 0 8 3.5817 8 8v54c0 7.1797-5.82 13-13 13h-67c-7.1797 0-13-5.8203-13-13v-54z"/>
+  </g>
+  <circle cx="75" cy="61" r="10.5"/>
+  <line x1="71" x2="71" y1="129" y2="99" stroke-width="2"/>
+  <line x1="78" x2="78" y1="129" y2="99" stroke-width="2"/>
+ </g>
+ <path d="m60 129h7v13.5c0 1.933-1.567 3.5-3.5 3.5s-3.5-1.567-3.5-3.5v-13.5z" fill="#000" stroke="#000"/>
+ <path d="m84 129h7v13.5c0 1.933-1.567 3.5-3.5 3.5s-3.5-1.567-3.5-3.5v-13.5z" fill="#000" stroke="#000"/>
+</svg>

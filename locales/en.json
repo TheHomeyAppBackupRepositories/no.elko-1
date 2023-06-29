@@ -1,0 +1,10 @@
+{
+  "multiButton": {
+    "buttonSettingResult": "New modes result in __switchConfig__ configuration, __heldButton__ held button support and __longRelease__ long press support",
+    "errorThreeButton": "Endpoint 23 and 24 need to be either both active or both inactive!",
+    "errorStandardSupport": "The Standard Shutter and Toggle actions are only supported in a 4-button configuration!",
+    "errorUnexpectedEndpoint": "Unexpected endpoint for this button configuration",
+    "errorUnexpectedConfig": "Unexpected button configuration",
+    "errorUnsupportedConfig": "Unsupported button configuration"
+  }
+}
