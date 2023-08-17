@@ -1,0 +1,10 @@
+{
+  "multiButton": {
+    "buttonSettingResult": "Nye moduser resulterer i __switchConfig__ konfigurering, __heldButton__ hold knapp support og __longRelease__ langt trykk support",
+    "errorThreeButton": "Endepunkt 23 og 24 må enten begge være aktive eller begge være inaktive!",
+    "errorStandardSupport": "Standard solskjerming og bryter-handlinger støttes bare i en 4-knapps konfigurasjon!",
+    "errorUnexpectedEndpoint": "Uventet endepunkt for denne knappkonfigurasjonen",
+    "errorUnexpectedConfig": "Uventet knappkonfigurasjon",
+    "errorUnsupportedConfig": "Ikke-støttet knappkonfigurasjon"
+  }
+}

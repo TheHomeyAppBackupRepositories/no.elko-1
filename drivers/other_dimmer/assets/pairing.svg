@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="130.12" height="129.79" version="1.1" viewBox="0 0 130.12 129.79" xml:space="preserve"
+     xmlns="http://www.w3.org/2000/svg">
+ <style type="text/css">.press {
+    animation: press 6s infinite;
+}
+
+@keyframes press {
+    0%, 5%, 65%, 100% {
+        fill-opacity: 0;
+    }
+    10%, 60% {
+        fill-opacity: 0.75;
+    }
+}</style>
+  <g transform="matrix(1.3333 0 0 -1.3333 -417.61 548.3)" stroke="#000"><path d="m316.45 408.02h11.126v2.4522h9.7202v-2.6099h48.851v-2.4543h10.817v2.5819h10.785v-11.257h2.2984v-9.5687h-2.4151v-48.857h-2.5241v-10.648h2.6567v-10.706h-11.269v-2.3215h-9.6708v2.3787h-49.191v2.3713h-10.603v-2.4721h-10.546v11.082h-2.5295v9.7266h2.5512v48.855h2.5513v10.7h-2.6008z" fill="none" stroke-width="1.5"/>
+    <g transform="translate(-.1536 .22778)" fill="none" stroke-width=".75"><path d="m334.07 376.3h-3.7323v3.5793h-2.5062v10.843c0 3.2837 3.1403 5.9712 5.9712 5.9712h10.494v-2.5926h4.025v-3.9035h-5.1653l-9.1026-9.1026z"/>
+      <path
+        d="m330.47 348.44v-4.0239h-2.5919v-10.494c0-2.8309 2.6873-5.971 5.971-5.971h10.844v2.5076h3.5768v3.7161h27.785v-3.7161h3.58v-2.5076h10.84c3.2837 0 5.9742 3.1401 5.9742 5.971v10.494h-2.5951v4.0239h-3.904z"/>
+      <path
+        d="m390.25 376.3h3.7323v3.5793h2.5062v10.843c0 3.2837-3.1403 5.9712-5.9712 5.9712h-10.494v-2.5926h-4.025v-3.9035h5.1653l9.1026-9.1026z"/></g>
+    <circle class="press" transform="scale(1,-1)" cx="362.01" cy="-362.55" r="4.4719" fill="#0078cc"
+            stroke-linecap="round" stroke-width=".75"/>
+    <rect class="press" transform="scale(1,-1)" x="358.68" y="-381.23" width="6.6536"
+          height="4.2606" fill="#0078cc" stroke-linecap="round" stroke-width=".75"/>
+    <rect transform="scale(1,-1)" x="346.02" y="-373.31" width="3.6704" height="9.1124" fill="none"
+          stroke-linecap="round" stroke-width=".75"/>
+    <rect transform="scale(1,-1)" x="344.84" y="-386.14" width="16.912" height="3.0416" fill="none"
+          stroke-linecap="round" stroke-width=".75"/></g></svg>

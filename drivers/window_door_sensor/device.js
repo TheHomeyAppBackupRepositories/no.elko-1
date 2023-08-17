@@ -9,7 +9,7 @@ const powerConfigurationDevice_1 = __importDefault(require("@drenso/homey-zigbee
 class ElkoContactSensor extends homey_zigbeedriver_1.ZigBeeDevice {
     async onNodeInit(payload) {
         await super.onNodeInit(payload);
-        await (0, iasZoneDevice_1.default)(this, payload.zclNode, ["alarm_contact"], ["alarm1"]);
+        await (0, iasZoneDevice_1.default)(this, payload.zclNode, ["alarm_contact"], ["alarm1"], undefined, this.isFirstInit());
         await (0, powerConfigurationDevice_1.default)(this, payload.zclNode);
     }
 }

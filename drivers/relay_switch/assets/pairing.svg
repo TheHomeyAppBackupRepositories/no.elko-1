@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="150" height="150" fill="none" version="1.1" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <radialGradient id="radialGradient1966-3" cx="65.5" cy="109.5" r="13" gradientTransform="matrix(.26458 0 0 .26458 -.22737 1.5349)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#0078CC" offset="0"/>
+   <stop stop-color="#0078CC" offset=".6"/>
+   <stop stop-color="#0078CC" stop-opacity="0" offset="1"/>
+  </radialGradient>
+ </defs>
+ <path d="m128 15h-105c-3.866 0-7 3.134-7 7v105c0 3.866 3.134 7 7 7h105c3.866 0 7-3.134 7-7v-105c0-3.866-3.134-7-7-7zm-105-4c-6.0751 0-11 4.9249-11 11v105c0 6.075 4.9249 11 11 11h105c6.075 0 11-4.925 11-11v-105c0-6.0751-4.925-11-11-11h-105z" clip-rule="evenodd" fill="#000" fill-rule="evenodd"/>
+ <rect x="29" y="31" width="92" height="87" rx="4" stroke="#000" stroke-width="2"/>
+ <circle cx="75" cy="75" r="2" fill="#000"/>
+ <g transform="matrix(3.7795 0 0 3.7795 10.859 -62.302)">
+  <style type="text/css">.press {
+    animation: press 5s infinite;
+}
+
+@keyframes press {
+    0%, 5%, 15%, 25%, 35%, 100% {
+        opacity: 0;
+    }
+    10%, 20%, 30% {
+        opacity: 0.75;
+    }
+}</style>
+  <circle class="press" cx="17.103" cy="30.507" r="3.4396" fill="url(#radialGradient1966-3)" stroke-width=".26458"/>
+ </g>
+</svg>

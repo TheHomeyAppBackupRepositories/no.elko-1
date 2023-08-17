@@ -41,7 +41,7 @@ class ElkoSmokeAlarm extends homey_zigbeedriver_1.ZigBeeDevice {
         await (0, iasZoneDevice_1.default)(this, payload.zclNode, ["alarm_smoke"], [(payload) => {
                 const flags = payload.zoneStatus.getBits();
                 return flags.includes("alarm1") || flags.includes("alarm2") || flags.includes("remoteAlarm");
-            }]);
+            }], undefined, this.isFirstInit());
         await this.setCapabilityValue("alarm_smoke", false);
         await (0, powerConfigurationDevice_1.default)(this, payload.zclNode);
         await (0, measureTemperature_1.default)(this, payload.zclNode);

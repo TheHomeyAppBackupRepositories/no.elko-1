@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="33.602mm" height="33.602mm" version="1.1" viewBox="0 0 33.602 33.602" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <radialGradient id="radialGradient1966" cx="65.5" cy="109.5" r="13" gradientTransform="matrix(.26458 0 0 .26458 -.22737 1.5349)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#0078CC" offset="0"/>
+   <stop stop-color="#0078CC" offset=".6"/>
+   <stop stop-color="#0078CC" stop-opacity="0" offset="1"/>
+  </radialGradient>
+ </defs>
+ <path d="m1.06 16.8c0 8.6945 7.0482 15.743 15.743 15.743s15.743-7.0482 15.743-15.743-7.0482-15.743-15.743-15.743-15.743 7.0482-15.743 15.743zm15.743-16.801c-9.2789 0-16.801 7.5221-16.801 16.801s7.5221 16.801 16.801 16.801 16.801-7.5221 16.801-16.801-7.5221-16.801-16.801-16.801z" clip-rule="evenodd" fill-rule="evenodd" stroke-width=".52917"/>
+ <g transform="matrix(.63078 0 0 -.63078 26.56 29.45)" stroke="#000" stroke-width=".41945">
+  <path d="m-4.113 40.817v-0.528h-22.711v0.528c-7.333-4.02-12.306-11.809-12.306-20.762 0-8.075 4.048-15.202 10.222-19.471l-0.393-1.754s6.664-4.1 13.835-4.1 12.18 3.117 12.18 3.117v1.922c6.878 4.139 11.48 11.674 11.48 20.286 0 8.953-4.973 16.742-12.307 20.762zm-22.711 0s5.111 2.893 11.398 2.893 11.313-2.893 11.313-2.893" fill="none" stroke="#000" stroke-width=".41945"/>
+ </g>
+ <g transform="matrix(.63078 0 0 -.63078 17.74 29.15)" stroke="#000" stroke-width=".41945">
+  <path d="m0 0c0-0.84-0.681-1.522-1.521-1.522-0.841 0-1.522 0.682-1.522 1.522s0.681 1.521 1.522 1.521c0.84 0 1.521-0.681 1.521-1.521z" fill="none" stroke="#000" stroke-width=".41945"/>
+ </g>
+ <g transform="matrix(.63078 0 0 -.63078 17.17 29.03)">
+  <path d="m0 0h-0.418v0.418h-0.372v-0.418h-0.418v-0.371h0.418v-0.418h0.372v0.418h0.418z"/>
+ </g>
+ <g transform="matrix(.63078 0 0 -.63078 12.81 23.15)" stroke="#000" stroke-width=".41945">
+  <path d="m0 0c0-0.941-0.762-1.704-1.703-1.704s-1.704 0.763-1.704 1.704c0 0.94 0.763 1.703 1.704 1.703s1.703-0.763 1.703-1.703z" fill="none" stroke="#000" stroke-width=".41945"/>
+ </g>
+ <g transform="matrix(.63078 0 0 -.63078 12.18 23.15)" stroke-width=".41945">
+  <path d="m0 0c0-0.393-0.319-0.713-0.712-0.713s-0.713 0.32-0.713 0.713 0.32 0.712 0.713 0.712 0.712-0.319 0.712-0.712"/>
+ </g>
+ <g transform="matrix(.63078 0 0 -.63078 23 14.93)" stroke="#000" stroke-width=".41945">
+  <path d="m0 0h-19.567v9.487h18.582l0.985-0.991z" fill="none" stroke="#000" stroke-width=".41945"/>
+ </g>
+ <g transform="translate(-5.3724 -7.3567)">
+  <style type="text/css">.press {
+    animation: press 5s infinite;
+}
+
+@keyframes press {
+    0%, 5%, 15%, 25%, 35%, 100% {
+        opacity: 0;
+    }
+    10%, 20%, 30% {
+        opacity: 0.75;
+    }
+}</style>
+  <circle class="press" cx="17.103" cy="30.507" r="3.4396" fill="url(#radialGradient1966)" stroke-width=".26458"/>
+ </g>
+</svg>

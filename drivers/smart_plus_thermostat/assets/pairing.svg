@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="150" height="150" fill="none" version="1.1" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <radialGradient id="radialGradient1966" cx="65.5" cy="109.5" r="13" gradientTransform="matrix(.99999 0 0 .99999 9.9994 -9.0009)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#0078CC" offset="0"/>
+   <stop stop-color="#0078CC" offset=".6"/>
+   <stop stop-color="#0078CC" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <style type="text/css">.press {
+        animation: press 10s infinite;
+      }
+
+      @keyframes press {
+        0%, 5%, 50%, 100% {
+          opacity: 0;
+        }
+        10%, 45% {
+          opacity: 0.75;
+        }
+      }
+
+      .blink {
+        animation: blink 10s infinite;
+      }
+
+      @keyframes blink {
+        0%, 40%, 46%, 50%, 56%, 60%, 66%, 70%, 76%, 80%, 86%, 90%, 96%, 100% {
+          opacity: 0;
+        }
+        41%, 45%, 51%, 55%, 61%, 65%, 71%, 75%, 81%, 85%, 91%, 95% {
+          opacity: 0.75;
+        }
+      }</style>
+ </defs>
+ <path d="m16 15v119h119v-119h-119zm-2-4c-1.1046 0-2 0.8954-2 2v123c0 1.105 0.8954 2 2 2h123c1.105 0 2-0.895 2-2v-123c0-1.1046-0.895-2-2-2h-123z" clip-rule="evenodd" fill="#000" fill-rule="evenodd"/>
+ <rect x="31" y="30" width="89" height="89" rx="1" stroke="#000" stroke-width="2"/>
+ <line x1="47" x2="54" y1="100" y2="100" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
+ <line x1="100.5" x2="100.5" y1="97" y2="104" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
+ <circle cx="75.5" cy="100.5" r="4" fill="none" stroke="#000" stroke-width="2"/>
+ <line x1="104" x2="97" y1="100.5" y2="100.5" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
+ <circle class="press" cx="75.5" cy="100.5" r="13" fill="url(#radialGradient1966)" stroke-width=".99999"/>
+ <ellipse class="blink" cx="69.987" cy="46.2" rx="2.0484" ry="2.0782" fill="#000"/>
+ <ellipse class="blink" cx="69.987" cy="52.409" rx="2.0484" ry="2.0782" fill="#000"/>
+ <ellipse class="blink" cx="69.987" cy="58.618" rx="2.0484" ry="2.0782" fill="#000"/>
+ <ellipse class="blink" cx="69.987" cy="64.827" rx="2.0484" ry="2.0782" fill="#000"/>
+ <ellipse class="blink" cx="69.987" cy="71.035" rx="2.0484" ry="2.0782" fill="#000"/>
+ <ellipse class="blink" cx="63.528" cy="71.035" rx="2.0484" ry="2.0782" fill="#000"/>
+ <ellipse class="blink" cx="57.069" cy="71.035" rx="2.0484" ry="2.0782" fill="#000"/>
+ <ellipse class="blink" cx="57.069" cy="64.827" rx="2.0484" ry="2.0782" fill="#000"/>
+ <ellipse class="blink" cx="94.868" cy="58.471" rx="2.0484" ry="2.0782" fill="#000"/>
+ <ellipse class="blink" cx="94.868" cy="64.68" rx="2.0484" ry="2.0782" fill="#000"/>
+ <ellipse class="blink" cx="94.868" cy="70.888" rx="2.0484" ry="2.0782" fill="#000"/>
+ <ellipse class="blink" cx="81.95" cy="58.471" rx="2.0484" ry="2.0782" fill="#000"/>
+ <ellipse class="blink" cx="88.409" cy="58.471" rx="2.0484" ry="2.0782" fill="#000"/>
+ <ellipse class="blink" cx="81.95" cy="70.888" rx="2.0484" ry="2.0782" fill="#000"/>
+ <ellipse class="blink" cx="81.95" cy="64.68" rx="2.0484" ry="2.0782" fill="#000"/>
+ <path class="blink" d="m48.494 50.024-1.8679-1.7077c1.0615-0.75034 1.9802-0.85493 3.3941-0.11198l1.1414-0.98667c-2.4952-1.4472-3.5403-1.2724-5.693-0.08183l-1.1486-1.1204c2.7219-1.8347 4.9863-2.0461 7.759-0.23367" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1px"/>
+</svg>

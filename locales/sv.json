@@ -1,0 +1,10 @@
+{
+  "multiButton": {
+    "errorThreeButton": "Slutpunkt 23 och 24 måste antingen vara aktiva eller båda inaktiva!",
+    "errorStandardSupport": "Funktionerna sluta och växla stöds endast i en konfiguration med 4 knappar!",
+    "errorUnexpectedEndpoint": "Oväntad slutpunkt för denna knappkonfiguration",
+    "errorUnexpectedConfig": "Oväntad knappkonfiguration",
+    "errorUnsupportedConfig": "Osupporterad knappkonfiguration",
+    "buttonSettingResult": "New modes result in __switchConfig__ configuration, __heldButton__ held button support and __longRelease__ long press support"
+  }
+}

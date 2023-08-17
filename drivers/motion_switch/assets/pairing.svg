@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="150" height="150" version="1.1" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+<style type="text/css">
+.press {
+    animation: press 5s infinite;
+}
+
+@keyframes press {
+    0%, 5%, 15%, 25%, 35%, 100% {
+        opacity: 0;
+    }
+    10%, 20%, 30% {
+        opacity: 0.75;
+    }
+}
+</style>
+  <radialGradient id="radialGradient1966" cx="65.5" cy="109.5" r="13" gradientTransform="translate(9.4232 -3.884)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#0078CC" offset="0"/>
+   <stop stop-color="#0078CC" offset=".6"/>
+   <stop stop-color="#0078CC" stop-opacity="0" offset="1"/>
+  </radialGradient>
+ </defs>
+ <path d="m16 15v119h119v-119h-119zm-1-4c-1.6569 0-3 1.3431-3 3v121c0 1.657 1.3431 3 3 3h121c1.657 0 3-1.343 3-3v-121c0-1.6569-1.343-3-3-3h-121z" clip-rule="evenodd" fill-rule="evenodd"/>
+ <g fill="none" stroke="#000">
+  <rect x="32" y="31" width="87" height="87" rx="2" stroke-width="2"/>
+  <rect x="49" y="60" width="52" height="30" rx="4" stroke-width="2"/>
+  <path d="m74.924 104.52v-5.5531" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m72.381 101.23c-1.3293 0.843-2.2121 2.327-2.2121 4.017 0 2.626 2.1287 4.755 4.7546 4.755 2.6254 0 4.7541-2.129 4.7541-4.755 0-1.69-0.8828-3.174-2.2121-4.017" stroke-linecap="round" stroke-linejoin="round"/>
+ </g>
+ <circle class="press" cx="74.923" cy="105.62" r="13" fill="url(#radialGradient1966)"/>
+</svg>

@@ -3,15 +3,15 @@
   "version": "0.0.0",
   "main": "app.js",
   "dependencies": {
-    "@drenso/homey-zigbee-library": "0.6.0",
+    "@drenso/homey-zigbee-library": "0.8.0",
     "homey-log": "2.1.0",
-    "homey-zigbeedriver": "2.0.2",
+    "homey-zigbeedriver": "2.1.0",
     "source-map-support": "0.5.21",
-    "zigbee-clusters": "2.1.2"
+    "zigbee-clusters": "2.2.1"
   },
   "devDependencies": {
     "@drenso/homey-branding-helper": "^2.2.0",
-    "@drenso/homey-translation-helper": "^2.1.0",
+    "@drenso/homey-translation-helper": "2.3.0",
     "@tsconfig/node16": "1.0.3",
     "@types/homey": "npm:homey-apps-sdk-v3-types@0.3.1",
     "@types/node": "16.11.45",
@@ -29,7 +29,9 @@
     "validate": "homey app validate --level=verified",
     "split": "homey-branding-helper prepare",
     "run": "homey-branding-helper run all",
-    "translate-out": "homey-translation-helper extract -l all --drivers-directory drivers-src",
-    "translate-in": "homey-translation-helper import -l all --drivers-directory drivers-src"
+    "run_elko": "homey-branding-helper run elko",
+    "run_schneider": "homey-branding-helper run schneider",
+    "translate-out": "homey-translation-helper extract -l en sv no da --drivers-directory drivers-src --additional-directories .branding",
+    "translate-in": "homey-translation-helper import -l en sv no da --drivers-directory drivers-src --additional-directories .branding"
   }
 }

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="150" height="150" version="1.1" viewBox="0 0 150 150"
+     xmlns="http://www.w3.org/2000/svg">
+  <style type="text/css">.press {
+    animation: press 5s infinite;
+    }
+
+    @keyframes press {
+    0%, 5%, 15%, 25%, 35%, 100% {
+    opacity: 0;
+    }
+    10%, 20%, 30% {
+    opacity: 0.75;
+    }
+    }
+  </style>
+  <defs>
+    <radialGradient id="radialGradient1966" cx="65.5" cy="109.5" r="13"
+                    gradientTransform="matrix(.99999 0 0 .99999 24.501 -77.5)"
+                    gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0078CC" offset="0"/>
+      <stop stop-color="#0078CC" offset=".6"/>
+      <stop stop-color="#0078CC" stop-opacity="0" offset="1"/>
+    </radialGradient>
+  </defs>
+  <path
+    d="m121.41 11.237c-0.912-0.7975-2.082-1.2371-3.293-1.2371h-87.169c-1.2551 0-2.4643 0.472-3.3874 1.3223l-15.952 14.692c-1.0278 0.9467-1.6126 2.2803-1.6126 3.6777v105.31c0 2.761 2.2386 5 5 5h120c2.761 0 5-2.239 5-5v-105.23c0-1.4418-0.622-2.8134-1.707-3.7628l-16.879-14.769zm-106.41 124.76h120c0.552 0 1-0.448 1-1v-105.23c0-0.2883-0.124-0.5626-0.341-0.7525l-16.879-14.769c-0.182-0.1595-0.416-0.2474-0.659-0.2474h-87.169c-0.251 0-0.4929 0.0944-0.6775 0.2645l-15.952 14.692-2.6665-2.8951 2.6665 2.8951c-0.2055 0.1893-0.3225 0.456-0.3225 0.7355v105.31c0 0.552 0.4477 1 1 1z"
+    clip-rule="evenodd" fill-rule="evenodd"/>
+  <g fill="none" stroke="#000">
+    <g stroke-width="2">
+      <circle cx="30" cy="125" r="6"/>
+      <circle cx="48" cy="125" r="6"/>
+      <circle cx="66" cy="125" r="6"/>
+      <circle cx="84" cy="125" r="6"/>
+      <circle cx="102" cy="125" r="6"/>
+      <circle cx="120" cy="125" r="6"/>
+    </g>
+    <line x1="13" x2="140" y1="92.5" y2="92.5"/>
+    <rect transform="rotate(90 122.5 27.5)" x="122.5" y="27.5" width="9" height="42" rx="4.5"/>
+    <rect transform="rotate(90 119.5 29.5)" x="119.5" y="29.5" width="5" height="11" rx=".5"/>
+    <rect transform="rotate(90 95.5 29.5)" x="95.5" y="29.5" width="5" height="11" rx=".5"/>
+    <circle cx="59" cy="32" r="6.5"/>
+  </g>
+  <circle cx="59" cy="32" r="2.5" stroke="#000"/>
+  <circle cx="102" cy="32" r="2.5" fill="none" stroke="#000"/>
+  <circle class="press" cx="90" cy="32" r="13" fill="url(#radialGradient1966)"
+          stroke-width=".99999"/>
+</svg>

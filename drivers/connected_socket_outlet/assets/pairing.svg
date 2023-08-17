@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="33.338mm" height="33.338mm" version="1.1" viewBox="0 0 33.338 33.338" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <radialGradient id="radialGradient1966" cx="65.5" cy="109.5" r="13" gradientTransform="matrix(.26458 0 0 .26458 -.22737 1.5349)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#0078CC" offset="0"/>
+   <stop stop-color="#0078CC" offset=".6"/>
+   <stop stop-color="#0078CC" stop-opacity="0" offset="1"/>
+  </radialGradient>
+ </defs>
+ <rect transform="scale(-1,1)" x="-33.073" y=".26447" width="32.809" height="32.809" fill="none" stroke="#000" stroke-linecap="round" stroke-width=".52894"/>
+ <rect x="5.9485" y="5.9545" width="21.434" height="21.434" fill="none" stroke="#000" stroke-linecap="round" stroke-width=".52596"/>
+ <circle cx="16.663" cy="16.674" r="9.7179" fill="none" stroke="#000" stroke-linecap="round" stroke-width=".60824"/>
+ <circle cx="16.663" cy="16.674" r="7.3229" fill="none" stroke="#000" stroke-linecap="round" stroke-width=".52917"/>
+ <path d="m8.8025 21.214c0.59007 1.0834 2.2282 2.6923 3.3191 3.3369 0.44209 0.26125 0.97948-0.64547 0.53715-0.89821-1.0949-0.62563-2.2691-1.9041-2.9308-3.0354-0.35227-0.60229-1.1927 0.10601-0.9255 0.59666z" fill="none" stroke="#000" stroke-width=".26458px"/>
+ <circle cx="13.203" cy="16.674" r="1.0707"/>
+ <circle transform="scale(-1,1)" cx="-20.133" cy="16.674" r="1.0707"/>
+ <g transform="translate(-6.3298 -8.0429)">
+  <style type="text/css">.press {
+    animation: press 5s infinite;
+}
+
+@keyframes press {
+    0%, 5%, 15%, 25%, 35%, 100% {
+        opacity: 0;
+    }
+    10%, 20%, 30% {
+        opacity: 0.75;
+    }
+}</style>
+  <circle class="press" cx="17.103" cy="30.507" r="3.4396" fill="url(#radialGradient1966)" stroke-width=".26458"/>
+ </g>
+</svg>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="150" height="150" version="1.1" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+<style type="text/css">
+.press {
+    animation: press 5s infinite;
+}
+
+@keyframes press {
+    0%, 5%, 15%, 25%, 35%, 100% {
+        opacity: 0;
+    }
+    10%, 20%, 30% {
+        opacity: 0.75;
+    }
+}
+</style>
+ <defs>
+  <radialGradient id="radialGradient1966" cx="65.5" cy="109.5" r="13" gradientTransform="translate(52.5 -76.5)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#0078CC" offset="0"/>
+   <stop stop-color="#0078CC" offset=".6"/>
+   <stop stop-color="#0078CC" stop-opacity="0" offset="1"/>
+  </radialGradient>
+ </defs>
+ <path d="m14 14v122h122v-122h-122zm-2-4c-1.1046 0-2 0.8954-2 2v126c0 1.105 0.8954 2 2 2h126c1.105 0 2-0.895 2-2v-126c0-1.1046-0.895-2-2-2h-126z" clip-rule="evenodd" fill-rule="evenodd"/>
+ <g fill="none" stroke="#000">
+  <g stroke-width="2">
+   <line x1="74" x2="74" y1="140" y2="110"/>
+   <line x1="74" x2="74" y1="40" y2="10"/>
+   <line x1="40" x2="10" y1="76" y2="76"/>
+   <line x1="140" x2="110" y1="76" y2="76"/>
+   <circle cx="75" cy="75" r="34"/>
+  </g>
+  <g stroke-linecap="round">
+   <path d="m123.26 37.75-4.714-10.678c-0.351-0.7948-1.479-0.7948-1.83 0l-4.714 10.678"/>
+   <path d="m112 112 4.714 10.678c0.351 0.795 1.479 0.795 1.83 0l4.714-10.678"/>
+   <path d="m37.258 37.75-4.7143-10.678c-0.3509-0.7948-1.4787-0.7948-1.8296 0l-4.7144 10.678"/>
+   <path d="m26 112 4.7143 10.678c0.3509 0.795 1.4787 0.795 1.8296 0l4.7144-10.678"/>
+  </g>
+ </g>
+ <circle class="press" cx="118" cy="33" r="13" fill="url(#radialGradient1966)"/>
+</svg>

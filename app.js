@@ -28,6 +28,10 @@ class ElkoApp extends homey_1.default.App {
             .registerRunListener(buttonListener);
         this.homey.flow.getDeviceTriggerCard('multi_button_long_released')
             .registerRunListener(buttonListener);
+        this.homey.flow.getActionCard('command_regulator_duty_cycle_set')
+            .registerRunListener(async (args) => {
+            await args.device.triggerCapabilityListener('command_regulator_duty_cycle', args.command_duty_cycle);
+        });
     }
 }
 module.exports = ElkoApp;

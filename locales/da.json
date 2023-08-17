@@ -1,0 +1,10 @@
+{
+  "multiButton": {
+    "buttonSettingResult": "Nye tilstande resulterer i __switchConfig__ konfiguration, __heldButton__ holdt knap understøttelse og __longRelease__ langt tryk understøttelse",
+    "errorThreeButton": "Endpoint 23 og 24 skal begge være enten aktive eller inaktive!",
+    "errorStandardSupport": "Standard solafskærmnings og omskiftningshandlinger understøttes kun i en 4-knap-konfiguration!",
+    "errorUnexpectedEndpoint": "Uventet slutpunkt for denne knapkonfiguration",
+    "errorUnexpectedConfig": "Uventet knapkonfiguration",
+    "errorUnsupportedConfig": "Ikke -understøttet knapkonfiguration"
+  }
+}
