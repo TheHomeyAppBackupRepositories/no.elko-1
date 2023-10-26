@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const zigbee_clusters_1 = require("zigbee-clusters");
 const ElkoWindowCoveringCluster_1 = __importDefault(require("../../lib/cluster/ElkoWindowCoveringCluster"));
-const windowCoveringsDevice_1 = __importDefault(require("@drenso/homey-zigbee-library/capabilities/windowCoveringsDevice"));
+const windowCoverings_1 = __importDefault(require("@drenso/homey-zigbee-library/capabilities/windowCoverings"));
 const ElkoMultiButtonDevice_1 = __importDefault(require("../../lib/device/multiSwitch/ElkoMultiButtonDevice"));
 zigbee_clusters_1.Cluster.addCluster(ElkoWindowCoveringCluster_1.default);
 class ElkoOneGangShutter extends ElkoMultiButtonDevice_1.default {
@@ -15,10 +15,13 @@ class ElkoOneGangShutter extends ElkoMultiButtonDevice_1.default {
     }
     async onNodeInit(payload) {
         await super.onNodeInit(payload);
+        if (!this.hasCapability('supports_short_release')) {
+            await this.addCapability('supports_short_release').catch(() => this.error('Failed to migrate short release capability'));
+        }
         // Add capability so its listeners are initialised correctly
         await this.addCapability("windowcoverings_tilt_set")
             .catch(e => this.error("Failed to add capability", "windowcoverings_tilt_set", e));
-        await (0, windowCoveringsDevice_1.default)(this, payload.zclNode);
+        await (0, windowCoverings_1.default)(this, payload.zclNode);
         // Remove the capability after if it is not currently supported
         if (!this.getSetting("hasTilt")) {
             await this.removeCapability("windowcoverings_tilt_set")

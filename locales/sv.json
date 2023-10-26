@@ -6,5 +6,12 @@
     "errorUnexpectedConfig": "Oväntad knappkonfiguration",
     "errorUnsupportedConfig": "Osupporterad knappkonfiguration",
     "buttonSettingResult": "New modes result in __switchConfig__ configuration, __heldButton__ held button support and __longRelease__ long press support"
-  }
+  },
+  "dimmer": {
+    "invalidBallastLevel": "Ogiltig ballastnivå"
+  },
+  "thermostat": {
+    "invalidBrightness": "Ogiltig skärmljusstyrka"
+  },
+  "deprecatedRepair": "En ny version av den här enheten är tillgänglig. Para ihop igen för att få förbättrad funktionalitet."
 }

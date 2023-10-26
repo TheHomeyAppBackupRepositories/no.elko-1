@@ -11,14 +11,14 @@ source_map_support_1.default.install();
 function buttonListener(args, state) {
     return args.button === "any" || args.button === `${state.button}`;
 }
-class ElkoApp extends homey_1.default.App {
+class ElkoSchneiderApp extends homey_1.default.App {
     onInit() {
         if (homey_1.default.env.DEBUG === '1') {
             (0, zigbee_clusters_1.debug)(true);
         }
         this.homeyLog = new homey_log_1.Log({ homey: this.homey });
         this.initializeFlowListeners();
-        this.log('Elko has been initialized');
+        this.log(homey_1.default.env.APP_NAME + ' has been initialized');
         return Promise.resolve();
     }
     initializeFlowListeners() {
@@ -34,5 +34,5 @@ class ElkoApp extends homey_1.default.App {
         });
     }
 }
-module.exports = ElkoApp;
+module.exports = ElkoSchneiderApp;
 //# sourceMappingURL=app.js.map

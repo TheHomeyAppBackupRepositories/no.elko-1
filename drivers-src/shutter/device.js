@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const homey_zigbeedriver_1 = require("homey-zigbeedriver");
 const zigbee_clusters_1 = require("zigbee-clusters");
 const ElkoWindowCoveringCluster_1 = __importDefault(require("../../lib/cluster/ElkoWindowCoveringCluster"));
-const windowCoveringsDevice_1 = __importDefault(require("@drenso/homey-zigbee-library/capabilities/windowCoveringsDevice"));
+const windowCoverings_1 = __importDefault(require("@drenso/homey-zigbee-library/capabilities/windowCoverings"));
 zigbee_clusters_1.Cluster.addCluster(ElkoWindowCoveringCluster_1.default);
 class ElkoShutter extends homey_zigbeedriver_1.ZigBeeDevice {
     async onNodeInit(payload) {
@@ -14,7 +14,7 @@ class ElkoShutter extends homey_zigbeedriver_1.ZigBeeDevice {
         // Add capability so its listeners are initialised correctly
         await this.addCapability("windowcoverings_tilt_set")
             .catch(e => this.error("Failed to add capability", "windowcoverings_tilt_set", e));
-        await (0, windowCoveringsDevice_1.default)(this, payload.zclNode);
+        await (0, windowCoverings_1.default)(this, payload.zclNode);
         // Remove the capability after if it is not currently supported
         if (!this.getSetting("hasTilt")) {
             await this.removeCapability("windowcoverings_tilt_set")

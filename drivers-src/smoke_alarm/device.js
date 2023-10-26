@@ -30,7 +30,7 @@ const homey_zigbeedriver_1 = require("homey-zigbeedriver");
 const zigbee_clusters_1 = require("zigbee-clusters");
 const MFGSettingsCluster_1 = __importStar(require("../../lib/cluster/MFGSettingsCluster"));
 const iasZoneDevice_1 = __importDefault(require("@drenso/homey-zigbee-library/lib/iasZoneDevice"));
-const powerConfigurationDevice_1 = __importDefault(require("@drenso/homey-zigbee-library/capabilities/powerConfigurationDevice"));
+const powerConfiguration_1 = __importDefault(require("@drenso/homey-zigbee-library/capabilities/powerConfiguration"));
 const measureTemperature_1 = __importDefault(require("@drenso/homey-zigbee-library/capabilities/measureTemperature"));
 const attributeDevice_1 = require("@drenso/homey-zigbee-library/lib/attributeDevice");
 zigbee_clusters_1.Cluster.addCluster(MFGSettingsCluster_1.default);
@@ -42,8 +42,8 @@ class ElkoSmokeAlarm extends homey_zigbeedriver_1.ZigBeeDevice {
                 const flags = payload.zoneStatus.getBits();
                 return flags.includes("alarm1") || flags.includes("alarm2") || flags.includes("remoteAlarm");
             }], undefined, this.isFirstInit());
-        await this.setCapabilityValue("alarm_smoke", false);
-        await (0, powerConfigurationDevice_1.default)(this, payload.zclNode);
+        await this.setCapabilityValue("alarm_smoke", false).catch(this.error);
+        await (0, powerConfiguration_1.default)(this, payload.zclNode);
         await (0, measureTemperature_1.default)(this, payload.zclNode);
         await (0, attributeDevice_1.initReadOnlyCapability)(this, payload.zclNode, 'display_lifetime', MFGSettingsCluster_1.default, "lifeTime", (age) => (age * 2), 0, 60 * 60 * 12);
     }

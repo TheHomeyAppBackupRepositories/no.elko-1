@@ -6,5 +6,15 @@
     "errorUnexpectedEndpoint": "Unexpected endpoint for this button configuration",
     "errorUnexpectedConfig": "Unexpected button configuration",
     "errorUnsupportedConfig": "Unsupported button configuration"
-  }
+  },
+  "dimmer": {
+    "invalidBallastLevel": "Invalid ballast level",
+    "invalidOnLevel": "Invalid on level",
+    "invalidControlMode": "Unsupported control mode"
+  },
+  "thermostat": {
+    "invalidBrightness": "Invalid screen brightness"
+  },
+  "deprecatedRepair": "A new version of this device is available. Pair again to get improved functionality.",
+  "initFailed": "Device initialisation failed, please try to remove it and add it again."
 }

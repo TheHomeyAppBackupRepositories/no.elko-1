@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "no.elko",
-  "version": "1.0.2",
+  "version": "1.5.8",
   "compatibility": ">=8.1.1",
   "platforms": [
     "local",
@@ -22,7 +22,9 @@
     "da": "Smart, right?"
   },
   "category": [
-    "appliances"
+    "appliances",
+    "climate",
+    "lights"
   ],
   "permissions": [],
   "images": {
@@ -52,7 +54,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=super_tr_thermostat&capabilities=command_regulator_duty_cycle"
+            "filter": "driver_id=super_tr_thermostat|smart_plus_thermostat&capabilities=command_regulator_duty_cycle"
           }
         ],
         "tokens": [
@@ -95,7 +97,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=super_tr_thermostat&capabilities=display_air_temperature"
+            "filter": "driver_id=super_tr_thermostat|smart_plus_thermostat&capabilities=display_air_temperature"
           }
         ],
         "id": "display_air_temperature_changed"
@@ -125,7 +127,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=super_tr_thermostat&capabilities=display_floor_temperature"
+            "filter": "driver_id=super_tr_thermostat|smart_plus_thermostat&capabilities=display_floor_temperature"
           }
         ],
         "id": "display_floor_temperature_changed"
@@ -160,7 +162,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=wireless_switch|freelocate_switch|multi_button_switch|fuga_switch|multi_button_dimmer|fuga_dimmer|one_gang_switch|one_gang_eswitch|one_gang_dimmer|one_gang_1-10V_dimmer|one_gang_dali_dimmer|one_gang_shutter|two_gang_switch|two_gang_eswitch|two_gang_dimmer&capabilities=supports_held_buttons"
+            "filter": "driver_id=wireless_switch|freelocate_switch|freelocate_switch_fuga|multi_button_switch|multi_button_switch_split|fuga_switch|fuga_switch_split|multi_button_dimmer|fuga_dimmer|one_gang_switch|one_gang_eswitch|one_gang_dimmer|one_gang_1-10V_dimmer|one_gang_dali_dimmer|one_gang_shutter|two_gang_switch|two_gang_switch_split|two_gang_eswitch|two_gang_eswitch_split|two_gang_dimmer|two_gang_dimmer_split&capabilities=supports_held_buttons"
           },
           {
             "name": "button",
@@ -252,7 +254,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=wireless_switch|freelocate_switch|multi_button_switch|fuga_switch|multi_button_dimmer|fuga_dimmer|two_gang_switch|two_gang_eswitch&capabilities=supports_long_release"
+            "filter": "driver_id=wireless_switch|freelocate_switch|freelocate_switch_fuga|multi_button_switch|multi_button_switch_split|fuga_switch|fuga_switch_split|multi_button_dimmer|fuga_dimmer|two_gang_switch|two_gang_switch_split|two_gang_eswitch|two_gang_eswitch_split&capabilities=supports_long_release"
           },
           {
             "name": "button",
@@ -344,7 +346,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=wireless_switch|freelocate_switch|multi_button_switch|fuga_switch|multi_button_dimmer|fuga_dimmer|one_gang_switch|one_gang_eswitch|one_gang_dimmer|one_gang_1-10V_dimmer|one_gang_dali_dimmer|one_gang_shutter|two_gang_switch|two_gang_eswitch|two_gang_dimmer"
+            "filter": "driver_id=wireless_switch|freelocate_switch|freelocate_switch_fuga|multi_button_switch|multi_button_switch_split|fuga_switch|fuga_switch_split|multi_button_dimmer|fuga_dimmer|one_gang_switch|one_gang_eswitch|one_gang_dimmer|one_gang_1-10V_dimmer|one_gang_dali_dimmer|one_gang_shutter|two_gang_switch|two_gang_switch_split|two_gang_eswitch|two_gang_eswitch_split|two_gang_dimmer|two_gang_dimmer_split&capabilities=supports_short_release"
           },
           {
             "name": "button",
@@ -426,7 +428,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=super_tr_thermostat&capabilities=command_regulator_duty_cycle"
+            "filter": "driver_id=super_tr_thermostat|smart_plus_thermostat&capabilities=command_regulator_duty_cycle"
           },
           {
             "name": "command_duty_cycle",
@@ -472,6 +474,7 @@
       "capabilities": [
         "onoff",
         "meter_power",
+        "measure_power",
         "measure_current",
         "measure_voltage"
       ],
@@ -496,6 +499,7 @@
               64516
             ],
             "bindings": [
+              6,
               1794,
               2820
             ]
@@ -514,7 +518,7 @@
       "id": "connected_socket_outlet"
     },
     {
-      "class": "button",
+      "class": "light",
       "connectivity": [
         "zigbee"
       ],
@@ -576,7 +580,150 @@
           }
         }
       },
-      "id": "dimmer_micromodule"
+      "id": "dimmer_micromodule",
+      "settings": [
+        {
+          "id": "ballastMinLevel",
+          "type": "number",
+          "label": {
+            "en": "Minimum level",
+            "sv": "Miniminivå",
+            "no": "Minimumsnivå",
+            "da": "Minimum niveau"
+          },
+          "units": {
+            "en": "%"
+          },
+          "hint": {
+            "en": "The minimum output level.",
+            "sv": "Minsta uteffektnivå.",
+            "no": "Minimum utgangsnivå.",
+            "da": "Minimum udgangsniveau."
+          },
+          "value": 1,
+          "min": 1,
+          "max": 100
+        },
+        {
+          "id": "ballastMaxLevel",
+          "type": "number",
+          "label": {
+            "en": "Maximum level",
+            "sv": "Maximal nivå",
+            "no": "Maksimalt nivå",
+            "da": "Maksimal niveau"
+          },
+          "units": {
+            "en": "%"
+          },
+          "hint": {
+            "en": "The maximum output level.",
+            "sv": "Den maximala utgångsnivån.",
+            "no": "Maksimalt utgangsnivå.",
+            "da": "Det maksimale udgangsniveau."
+          },
+          "value": 100,
+          "min": 1,
+          "max": 100
+        },
+        {
+          "id": "onLevel",
+          "type": "number",
+          "label": {
+            "en": "On level",
+            "sv": "På nivå",
+            "no": "På nivå",
+            "da": "På niveau"
+          },
+          "units": {
+            "en": "%",
+            "sv": "%",
+            "no": "%",
+            "da": "%"
+          },
+          "hint": {
+            "en": "The output level to use when the device is turned on.",
+            "sv": "Utgångsnivån som ska användas när enheten slås på.",
+            "no": "Utgangsnivået som skal brukes når enheten er slått på.",
+            "da": "Udgangsniveauet, der skal bruges, når enheden er tændt."
+          },
+          "value": 100,
+          "min": 1,
+          "max": 100
+        },
+        {
+          "id": "usePreviousOnLevel",
+          "type": "checkbox",
+          "value": true,
+          "label": {
+            "en": "Use previous level",
+            "sv": "Använd föregående nivå",
+            "no": "Bruk forrige nivå",
+            "da": "Brug forrige niveau"
+          },
+          "hint": {
+            "en": "Use the previous active level when the device is turned on.",
+            "sv": "Använd den tidigare aktiva nivån när enheten är påslagen.",
+            "no": "Bruk forrige aktive nivå når enheten er slått på.",
+            "da": "Brug det forrige aktive niveau, når enheden er tændt."
+          }
+        },
+        {
+          "id": "controlMode",
+          "type": "dropdown",
+          "value": "automatic",
+          "label": {
+            "en": "Control mode",
+            "sv": "Kontrolläge",
+            "no": "Kontrollmodus",
+            "da": "Kontroltilstand"
+          },
+          "hint": {
+            "en": "The method used to control the dim level. A different mode may help with flickering or if dimming is not smooth.",
+            "sv": "Metoden som används för att styra dimnivån. Ett annat läge kan hjälpa till med flimmer eller om dimningen inte är jämn.",
+            "no": "Metoden som brukes for å kontrollere dimmenivået. En annen modus kan hjelpe med flimring eller hvis dimmingen ikke er jevn.",
+            "da": "Metoden, der bruges til at styre dæmpningsniveauet. En anden tilstand kan hjælpe med flimren, eller hvis dæmpningen ikke er jævn."
+          },
+          "values": [
+            {
+              "id": "automatic",
+              "label": {
+                "en": "Automatic",
+                "sv": "Automatisk",
+                "no": "Automatisk",
+                "da": "Automatisk"
+              }
+            },
+            {
+              "id": "rcMode",
+              "label": {
+                "en": "RC mode",
+                "sv": "RC-läge",
+                "no": "RC-modus",
+                "da": "RC-tilstand"
+              }
+            },
+            {
+              "id": "rlMode",
+              "label": {
+                "en": "RL mode",
+                "sv": "RL-läge",
+                "no": "RL-modus",
+                "da": "RL-tilstand"
+              }
+            },
+            {
+              "id": "rlLED",
+              "label": {
+                "en": "RL LED",
+                "sv": "RL LED",
+                "no": "RL LED",
+                "da": "RL LED"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "class": "button",
@@ -601,7 +748,8 @@
       "capabilities": [
         "measure_battery",
         "supports_held_buttons",
-        "supports_long_release"
+        "supports_long_release",
+        "supports_short_release"
       ],
       "energy": {
         "batteries": [
@@ -1201,7 +1349,7 @@
       ]
     },
     {
-      "class": "button",
+      "class": "light",
       "connectivity": [
         "zigbee"
       ],
@@ -1480,6 +1628,147 @@
           "value": 100,
           "min": 0,
           "max": 100
+        },
+        {
+          "id": "ballastMinLevel",
+          "type": "number",
+          "label": {
+            "en": "Minimum level",
+            "sv": "Miniminivå",
+            "no": "Minimumsnivå",
+            "da": "Minimum niveau"
+          },
+          "units": {
+            "en": "%"
+          },
+          "hint": {
+            "en": "The minimum output level.",
+            "sv": "Minsta uteffektnivå.",
+            "no": "Minimum utgangsnivå.",
+            "da": "Minimum udgangsniveau."
+          },
+          "value": 1,
+          "min": 1,
+          "max": 100
+        },
+        {
+          "id": "ballastMaxLevel",
+          "type": "number",
+          "label": {
+            "en": "Maximum level",
+            "sv": "Maximal nivå",
+            "no": "Maksimalt nivå",
+            "da": "Maksimal niveau"
+          },
+          "units": {
+            "en": "%"
+          },
+          "hint": {
+            "en": "The maximum output level.",
+            "sv": "Den maximala utgångsnivån.",
+            "no": "Maksimalt utgangsnivå.",
+            "da": "Det maksimale udgangsniveau."
+          },
+          "value": 100,
+          "min": 1,
+          "max": 100
+        },
+        {
+          "id": "onLevel",
+          "type": "number",
+          "label": {
+            "en": "On level",
+            "sv": "På nivå",
+            "no": "På nivå",
+            "da": "På niveau"
+          },
+          "units": {
+            "en": "%",
+            "sv": "%",
+            "no": "%",
+            "da": "%"
+          },
+          "hint": {
+            "en": "The output level to use when the device is turned on.",
+            "sv": "Utgångsnivån som ska användas när enheten slås på.",
+            "no": "Utgangsnivået som skal brukes når enheten er slått på.",
+            "da": "Udgangsniveauet, der skal bruges, når enheden er tændt."
+          },
+          "value": 100,
+          "min": 1,
+          "max": 100
+        },
+        {
+          "id": "usePreviousOnLevel",
+          "type": "checkbox",
+          "value": true,
+          "label": {
+            "en": "Use previous level",
+            "sv": "Använd föregående nivå",
+            "no": "Bruk forrige nivå",
+            "da": "Brug forrige niveau"
+          },
+          "hint": {
+            "en": "Use the previous active level when the device is turned on.",
+            "sv": "Använd den tidigare aktiva nivån när enheten är påslagen.",
+            "no": "Bruk forrige aktive nivå når enheten er slått på.",
+            "da": "Brug det forrige aktive niveau, når enheden er tændt."
+          }
+        },
+        {
+          "id": "controlMode",
+          "type": "dropdown",
+          "value": "automatic",
+          "label": {
+            "en": "Control mode",
+            "sv": "Kontrolläge",
+            "no": "Kontrollmodus",
+            "da": "Kontroltilstand"
+          },
+          "hint": {
+            "en": "The method used to control the dim level. A different mode may help with flickering or if dimming is not smooth.",
+            "sv": "Metoden som används för att styra dimnivån. Ett annat läge kan hjälpa till med flimmer eller om dimningen inte är jämn.",
+            "no": "Metoden som brukes for å kontrollere dimmenivået. En annen modus kan hjelpe med flimring eller hvis dimmingen ikke er jevn.",
+            "da": "Metoden, der bruges til at styre dæmpningsniveauet. En anden tilstand kan hjælpe med flimren, eller hvis dæmpningen ikke er jævn."
+          },
+          "values": [
+            {
+              "id": "automatic",
+              "label": {
+                "en": "Automatic",
+                "sv": "Automatisk",
+                "no": "Automatisk",
+                "da": "Automatisk"
+              }
+            },
+            {
+              "id": "rcMode",
+              "label": {
+                "en": "RC mode",
+                "sv": "RC-läge",
+                "no": "RC-modus",
+                "da": "RC-tilstand"
+              }
+            },
+            {
+              "id": "rlMode",
+              "label": {
+                "en": "RL mode",
+                "sv": "RL-läge",
+                "no": "RL-modus",
+                "da": "RL-tilstand"
+              }
+            },
+            {
+              "id": "rlLED",
+              "label": {
+                "en": "RL LED",
+                "sv": "RL LED",
+                "no": "RL LED",
+                "da": "RL LED"
+              }
+            }
+          ]
         }
       ]
     },
@@ -1584,7 +1873,7 @@
       ]
     },
     {
-      "class": "button",
+      "class": "light",
       "connectivity": [
         "zigbee"
       ],
@@ -1850,6 +2139,7 @@
       "capabilities": [
         "onoff",
         "meter_power",
+        "measure_power",
         "measure_current",
         "measure_voltage"
       ],
@@ -1874,6 +2164,7 @@
               64516
             ],
             "bindings": [
+              6,
               1794,
               2820
             ]
@@ -1892,7 +2183,7 @@
       "id": "other_connected_socket_outlet"
     },
     {
-      "class": "button",
+      "class": "light",
       "connectivity": [
         "zigbee"
       ],
@@ -1955,7 +2246,7 @@
       "id": "other_dimmer"
     },
     {
-      "class": "button",
+      "class": "light",
       "connectivity": [
         "zigbee"
       ],
@@ -2018,10 +2309,153 @@
           }
         }
       },
-      "id": "push_button_dimmer"
+      "id": "push_button_dimmer",
+      "settings": [
+        {
+          "id": "ballastMinLevel",
+          "type": "number",
+          "label": {
+            "en": "Minimum level",
+            "sv": "Miniminivå",
+            "no": "Minimumsnivå",
+            "da": "Minimum niveau"
+          },
+          "units": {
+            "en": "%"
+          },
+          "hint": {
+            "en": "The minimum output level.",
+            "sv": "Minsta uteffektnivå.",
+            "no": "Minimum utgangsnivå.",
+            "da": "Minimum udgangsniveau."
+          },
+          "value": 1,
+          "min": 1,
+          "max": 100
+        },
+        {
+          "id": "ballastMaxLevel",
+          "type": "number",
+          "label": {
+            "en": "Maximum level",
+            "sv": "Maximal nivå",
+            "no": "Maksimalt nivå",
+            "da": "Maksimal niveau"
+          },
+          "units": {
+            "en": "%"
+          },
+          "hint": {
+            "en": "The maximum output level.",
+            "sv": "Den maximala utgångsnivån.",
+            "no": "Maksimalt utgangsnivå.",
+            "da": "Det maksimale udgangsniveau."
+          },
+          "value": 100,
+          "min": 1,
+          "max": 100
+        },
+        {
+          "id": "onLevel",
+          "type": "number",
+          "label": {
+            "en": "On level",
+            "sv": "På nivå",
+            "no": "På nivå",
+            "da": "På niveau"
+          },
+          "units": {
+            "en": "%",
+            "sv": "%",
+            "no": "%",
+            "da": "%"
+          },
+          "hint": {
+            "en": "The output level to use when the device is turned on.",
+            "sv": "Utgångsnivån som ska användas när enheten slås på.",
+            "no": "Utgangsnivået som skal brukes når enheten er slått på.",
+            "da": "Udgangsniveauet, der skal bruges, når enheden er tændt."
+          },
+          "value": 100,
+          "min": 1,
+          "max": 100
+        },
+        {
+          "id": "usePreviousOnLevel",
+          "type": "checkbox",
+          "value": true,
+          "label": {
+            "en": "Use previous level",
+            "sv": "Använd föregående nivå",
+            "no": "Bruk forrige nivå",
+            "da": "Brug forrige niveau"
+          },
+          "hint": {
+            "en": "Use the previous active level when the device is turned on.",
+            "sv": "Använd den tidigare aktiva nivån när enheten är påslagen.",
+            "no": "Bruk forrige aktive nivå når enheten er slått på.",
+            "da": "Brug det forrige aktive niveau, når enheden er tændt."
+          }
+        },
+        {
+          "id": "controlMode",
+          "type": "dropdown",
+          "value": "automatic",
+          "label": {
+            "en": "Control mode",
+            "sv": "Kontrolläge",
+            "no": "Kontrollmodus",
+            "da": "Kontroltilstand"
+          },
+          "hint": {
+            "en": "The method used to control the dim level. A different mode may help with flickering or if dimming is not smooth.",
+            "sv": "Metoden som används för att styra dimnivån. Ett annat läge kan hjälpa till med flimmer eller om dimningen inte är jämn.",
+            "no": "Metoden som brukes for å kontrollere dimmenivået. En annen modus kan hjelpe med flimring eller hvis dimmingen ikke er jevn.",
+            "da": "Metoden, der bruges til at styre dæmpningsniveauet. En anden tilstand kan hjælpe med flimren, eller hvis dæmpningen ikke er jævn."
+          },
+          "values": [
+            {
+              "id": "automatic",
+              "label": {
+                "en": "Automatic",
+                "sv": "Automatisk",
+                "no": "Automatisk",
+                "da": "Automatisk"
+              }
+            },
+            {
+              "id": "rcMode",
+              "label": {
+                "en": "RC mode",
+                "sv": "RC-läge",
+                "no": "RC-modus",
+                "da": "RC-tilstand"
+              }
+            },
+            {
+              "id": "rlMode",
+              "label": {
+                "en": "RL mode",
+                "sv": "RL-läge",
+                "no": "RL-modus",
+                "da": "RL-tilstand"
+              }
+            },
+            {
+              "id": "rlLED",
+              "label": {
+                "en": "RL LED",
+                "sv": "RL LED",
+                "no": "RL LED",
+                "da": "RL LED"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
-      "class": "button",
+      "class": "light",
       "connectivity": [
         "zigbee"
       ],
@@ -2143,7 +2577,7 @@
       ]
     },
     {
-      "class": "button",
+      "class": "light",
       "connectivity": [
         "zigbee"
       ],
@@ -2206,7 +2640,150 @@
           }
         }
       },
-      "id": "rotary_dimmer"
+      "id": "rotary_dimmer",
+      "settings": [
+        {
+          "id": "ballastMinLevel",
+          "type": "number",
+          "label": {
+            "en": "Minimum level",
+            "sv": "Miniminivå",
+            "no": "Minimumsnivå",
+            "da": "Minimum niveau"
+          },
+          "units": {
+            "en": "%"
+          },
+          "hint": {
+            "en": "The minimum output level.",
+            "sv": "Minsta uteffektnivå.",
+            "no": "Minimum utgangsnivå.",
+            "da": "Minimum udgangsniveau."
+          },
+          "value": 1,
+          "min": 1,
+          "max": 100
+        },
+        {
+          "id": "ballastMaxLevel",
+          "type": "number",
+          "label": {
+            "en": "Maximum level",
+            "sv": "Maximal nivå",
+            "no": "Maksimalt nivå",
+            "da": "Maksimal niveau"
+          },
+          "units": {
+            "en": "%"
+          },
+          "hint": {
+            "en": "The maximum output level.",
+            "sv": "Den maximala utgångsnivån.",
+            "no": "Maksimalt utgangsnivå.",
+            "da": "Det maksimale udgangsniveau."
+          },
+          "value": 100,
+          "min": 1,
+          "max": 100
+        },
+        {
+          "id": "onLevel",
+          "type": "number",
+          "label": {
+            "en": "On level",
+            "sv": "På nivå",
+            "no": "På nivå",
+            "da": "På niveau"
+          },
+          "units": {
+            "en": "%",
+            "sv": "%",
+            "no": "%",
+            "da": "%"
+          },
+          "hint": {
+            "en": "The output level to use when the device is turned on.",
+            "sv": "Utgångsnivån som ska användas när enheten slås på.",
+            "no": "Utgangsnivået som skal brukes når enheten er slått på.",
+            "da": "Udgangsniveauet, der skal bruges, når enheden er tændt."
+          },
+          "value": 100,
+          "min": 1,
+          "max": 100
+        },
+        {
+          "id": "usePreviousOnLevel",
+          "type": "checkbox",
+          "value": true,
+          "label": {
+            "en": "Use previous level",
+            "sv": "Använd föregående nivå",
+            "no": "Bruk forrige nivå",
+            "da": "Brug forrige niveau"
+          },
+          "hint": {
+            "en": "Use the previous active level when the device is turned on.",
+            "sv": "Använd den tidigare aktiva nivån när enheten är påslagen.",
+            "no": "Bruk forrige aktive nivå når enheten er slått på.",
+            "da": "Brug det forrige aktive niveau, når enheden er tændt."
+          }
+        },
+        {
+          "id": "controlMode",
+          "type": "dropdown",
+          "value": "automatic",
+          "label": {
+            "en": "Control mode",
+            "sv": "Kontrolläge",
+            "no": "Kontrollmodus",
+            "da": "Kontroltilstand"
+          },
+          "hint": {
+            "en": "The method used to control the dim level. A different mode may help with flickering or if dimming is not smooth.",
+            "sv": "Metoden som används för att styra dimnivån. Ett annat läge kan hjälpa till med flimmer eller om dimningen inte är jämn.",
+            "no": "Metoden som brukes for å kontrollere dimmenivået. En annen modus kan hjelpe med flimring eller hvis dimmingen ikke er jevn.",
+            "da": "Metoden, der bruges til at styre dæmpningsniveauet. En anden tilstand kan hjælpe med flimren, eller hvis dæmpningen ikke er jævn."
+          },
+          "values": [
+            {
+              "id": "automatic",
+              "label": {
+                "en": "Automatic",
+                "sv": "Automatisk",
+                "no": "Automatisk",
+                "da": "Automatisk"
+              }
+            },
+            {
+              "id": "rcMode",
+              "label": {
+                "en": "RC mode",
+                "sv": "RC-läge",
+                "no": "RC-modus",
+                "da": "RC-tilstand"
+              }
+            },
+            {
+              "id": "rlMode",
+              "label": {
+                "en": "RL mode",
+                "sv": "RL-läge",
+                "no": "RL-modus",
+                "da": "RL-tilstand"
+              }
+            },
+            {
+              "id": "rlLED",
+              "label": {
+                "en": "RL LED",
+                "sv": "RL LED",
+                "no": "RL LED",
+                "da": "RL LED"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "class": "blinds",
@@ -2660,6 +3237,7 @@
       "capabilities": [
         "measure_temperature",
         "target_temperature",
+        "command_regulator_duty_cycle",
         "display_air_temperature",
         "display_floor_temperature",
         "meter_power",
@@ -2694,7 +3272,8 @@
               65315
             ],
             "bindings": [
-              513
+              513,
+              65302
             ]
           },
           "2": {
@@ -2741,6 +3320,62 @@
       },
       "id": "smart_plus_thermostat",
       "settings": [
+        {
+          "id": "regulatorFunction",
+          "type": "dropdown",
+          "label": {
+            "en": "Regulation function",
+            "sv": "Reguleringsfunktion",
+            "no": "Reguleringsfunksjon",
+            "da": "Reguleringsfunktion"
+          },
+          "hint": {
+            "en": "Whether the device attempts to maintain a temperature setpoint or follows a duty cycle.",
+            "sv": "Om enheten försöker bibehålla ett temperaturbörvärde eller följer en arbetscykel.",
+            "no": "Om enheten forsøker å opprettholde et temperaturmål eller følger en syklus med oppgaver.",
+            "da": "Om enheden forsøger at opretholde et temperatursæt eller følger en driftscyklus."
+          },
+          "values": [
+            {
+              "id": "thermostat",
+              "label": {
+                "en": "Thermostat",
+                "sv": "Termostat",
+                "no": "Termostat",
+                "da": "Termostat"
+              }
+            },
+            {
+              "id": "regulator",
+              "label": {
+                "en": "Regulator",
+                "sv": "Regulator",
+                "no": "Regulator",
+                "da": "Regulator"
+              }
+            }
+          ],
+          "value": "thermostat"
+        },
+        {
+          "id": "regulatorTime",
+          "type": "number",
+          "label": {
+            "en": "Regulator period",
+            "sv": "Regulator körtid",
+            "no": "Reguleringsperiode",
+            "da": "Regulatorperiode"
+          },
+          "hint": {
+            "en": "The period of the regulator cycle in minutes. Choose a long time for (slow) concrete floors and a short time for (quick) hardwood floors.",
+            "sv": "Perioden för regulatorcykeln i minuter. Välj lång tid för (långsamma) betonggolv och kort tid för (snabba) trägolv.",
+            "no": "Perioden for regulatorcyklusen i minutter. Velg lang tid for (treg) betonggulv og kort tid for (rask) parkettgulv.",
+            "da": "Regulatorcyklussperioden på få minutter. Vælg lang tid til (langsomme) betongulve og kort tid til (hurtig) trægulve."
+          },
+          "value": 10,
+          "min": 1,
+          "max": 60
+        },
         {
           "id": "load",
           "type": "number",
@@ -2916,6 +3551,59 @@
             }
           ],
           "value": "none"
+        },
+        {
+          "id": "brightness",
+          "type": "number",
+          "label": {
+            "en": "Screen brightness",
+            "sv": "",
+            "no": "",
+            "da": ""
+          },
+          "unit": "%",
+          "value": 100,
+          "min": 1,
+          "max": 100
+        },
+        {
+          "id": "inactiveBrightness",
+          "type": "number",
+          "label": {
+            "en": "Inactive screen brightness",
+            "sv": "Inaktiv skärmljusstyrka",
+            "no": "Inaktiv skjermlysstyrke",
+            "da": "Inaktiv skærmlysstyrke"
+          },
+          "hint": {
+            "en": "The brightness of the screen when it is inactive. This needs to be less than the active brightness.",
+            "sv": "Ljusstyrkan på skärmen när den är inaktiv. Detta måste vara mindre än den aktiva ljusstyrkan.",
+            "no": "Lysstyrken på skjermen når den er inaktiv. Dette må være mindre enn den aktive lysstyrken.",
+            "da": "Skærmens lysstyrke, når den er inaktiv. Dette skal være mindre end den aktive lysstyrke."
+          },
+          "unit": "%",
+          "value": 100,
+          "min": 0,
+          "max": 100
+        },
+        {
+          "id": "activityTimeout",
+          "type": "number",
+          "label": {
+            "en": "Activity timeout",
+            "sv": "Timeout för aktivitet",
+            "no": "Tidsavbrudd for aktivitet",
+            "da": "Timeout for aktivitet"
+          },
+          "hint": {
+            "en": "The time in seconds until the screen becomes inactive.",
+            "sv": "Tiden i sekunder tills skärmen blir inaktiv.",
+            "no": "Tiden i sekunder før skjermen blir inaktiv.",
+            "da": "Tiden i sekunder, indtil skærmen bliver inaktiv."
+          },
+          "value": 60,
+          "min": 5,
+          "max": 3600
         }
       ]
     },
@@ -3161,7 +3849,6 @@
         "display_air_temperature",
         "display_floor_temperature",
         "display_heating",
-        "meter_power",
         "measure_power",
         "command_night_mode",
         "command_child_lock",
@@ -3370,7 +4057,7 @@
       ]
     },
     {
-      "class": "button",
+      "class": "light",
       "connectivity": [
         "zigbee"
       ],
@@ -3866,6 +4553,15 @@
         "sv": "Supporterar lång knapptryckning",
         "no": "Støtter deteksjon av lang slipp-deteksjon",
         "da": "Understøtter detektion med lang frigivelse"
+      },
+      "type": "boolean",
+      "getable": false,
+      "setable": false,
+      "uiComponent": null
+    },
+    "supports_short_release": {
+      "title": {
+        "en": "Supports Short Release Detection"
       },
       "type": "boolean",
       "getable": false,

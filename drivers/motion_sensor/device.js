@@ -30,20 +30,19 @@ const homey_zigbeedriver_1 = require("homey-zigbeedriver");
 const zigbee_clusters_1 = require("zigbee-clusters");
 const iasZoneDevice_1 = __importDefault(require("@drenso/homey-zigbee-library/lib/iasZoneDevice"));
 const measureIlluminance_1 = __importDefault(require("@drenso/homey-zigbee-library/capabilities/measureIlluminance"));
-const powerConfigurationDevice_1 = __importDefault(require("@drenso/homey-zigbee-library/capabilities/powerConfigurationDevice"));
+const powerConfiguration_1 = __importDefault(require("@drenso/homey-zigbee-library/capabilities/powerConfiguration"));
 const ElkoPirIasZoneCluster_1 = __importStar(require("../../lib/cluster/ElkoPirIasZoneCluster"));
 zigbee_clusters_1.Cluster.addCluster(ElkoPirIasZoneCluster_1.default);
-class ElkoContactSensor extends homey_zigbeedriver_1.ZigBeeDevice {
+class ElkoMotionSensor extends homey_zigbeedriver_1.ZigBeeDevice {
     async onNodeInit(payload) {
         await super.onNodeInit(payload);
-        this.zclNode.endpoints[1].clusters[ElkoPirIasZoneCluster_1.default.NAME].readAttributes(['currentZoneSensitivityLevel', 'numberOfZoneSensitivityLevelsSupported']).then(res => console.log('Attributes:', res));
         await (0, iasZoneDevice_1.default)(this, payload.zclNode, ["alarm_motion"], ["alarm2"], undefined, this.isFirstInit());
         await (0, measureIlluminance_1.default)(this, payload.zclNode);
-        await (0, powerConfigurationDevice_1.default)(this, payload.zclNode);
+        await (0, powerConfiguration_1.default)(this, payload.zclNode);
     }
     async onSettings(settingsEvent) {
         await (0, ElkoPirIasZoneCluster_1.onElkoPirIasZoneClusterSettings)(this, settingsEvent);
     }
 }
-module.exports = ElkoContactSensor;
+module.exports = ElkoMotionSensor;
 //# sourceMappingURL=device.js.map

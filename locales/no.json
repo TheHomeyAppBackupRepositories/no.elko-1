@@ -6,5 +6,12 @@
     "errorUnexpectedEndpoint": "Uventet endepunkt for denne knappkonfigurasjonen",
     "errorUnexpectedConfig": "Uventet knappkonfigurasjon",
     "errorUnsupportedConfig": "Ikke-støttet knappkonfigurasjon"
-  }
+  },
+  "dimmer": {
+    "invalidBallastLevel": "Ugyldig ballastnivå"
+  },
+  "thermostat": {
+    "invalidBrightness": "Ugyldig skjermlysstyrke"
+  },
+  "deprecatedRepair": "En ny versjon av denne enheten er tilgjengelig. Par igjen for å få forbedret funksjonalitet."
 }

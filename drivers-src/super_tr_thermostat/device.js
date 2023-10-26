@@ -22,15 +22,21 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const homey_zigbeedriver_1 = require("homey-zigbeedriver");
 const zigbee_clusters_1 = require("zigbee-clusters");
-const ElkoSuperTRThermostatCluster_1 = __importStar(require("../../lib/cluster/ElkoSuperTRThermostatCluster"));
+const ElkoThermostatCluster_1 = __importStar(require("../../lib/cluster/ElkoThermostatCluster"));
 const attributeDevice_1 = require("@drenso/homey-zigbee-library/lib/attributeDevice");
-zigbee_clusters_1.Cluster.addCluster(ElkoSuperTRThermostatCluster_1.default);
-class ElkoSuperThermostat extends homey_zigbeedriver_1.ZigBeeDevice {
+const thermostat_1 = __importDefault(require("../../lib/device/thermostat"));
+zigbee_clusters_1.Cluster.addCluster(ElkoThermostatCluster_1.default);
+class ElkoSuperThermostat extends thermostat_1.default {
     async onNodeInit(payload) {
         await super.onNodeInit(payload);
+        if (this.hasCapability('meter_power')) {
+            await this.removeCapability('meter_power').catch(this.error);
+        }
         const tempReportParser = (value) => {
             // Value comes from int16
             // Check for invalid values
@@ -48,64 +54,58 @@ class ElkoSuperThermostat extends homey_zigbeedriver_1.ZigBeeDevice {
             const parsedValue = tempReportParser(value);
             if (this.hasCapability('target_temperature')) {
                 await this.setCapabilityValue('target_temperature', parsedValue);
-                this.log(`handle report (cluster: ${ElkoSuperTRThermostatCluster_1.default.NAME}, capability: target_temperature), parsed payload:`, parsedValue);
+                this.log(`handle report (cluster: ${ElkoThermostatCluster_1.default.NAME}, capability: target_temperature), parsed payload:`, parsedValue);
             }
             if (this.hasCapability('command_regulator_duty_cycle')) {
                 await this.setCapabilityValue('command_regulator_duty_cycle', parsedValue);
-                this.log(`handle report (cluster: ${ElkoSuperTRThermostatCluster_1.default.NAME}, capability: command_regulator_duty_cycle), parsed payload:`, parsedValue);
+                this.log(`handle report (cluster: ${ElkoThermostatCluster_1.default.NAME}, capability: command_regulator_duty_cycle), parsed payload:`, parsedValue);
             }
         };
-        const initialValues = await this.zclNode.endpoints[1].clusters[ElkoSuperTRThermostatCluster_1.default.NAME].readAttributes([
+        const initialValues = await this.zclNode.endpoints[1].clusters[ElkoThermostatCluster_1.default.NAME].readAttributes([
             'occupiedHeatingSetpoint', 'load', 'sensor', 'maxFloorTemperature', 'calibration', 'regulatorMode', 'regulatorTime',
-        ]);
+        ]).catch(this.error);
+        if (this.isFirstInit() && !initialValues) {
+            throw new Error(this.homey.__('initFailed'));
+        }
         this.log('Initial attribute values:', initialValues);
         /**
          * Initialise setting synchronisation
          **/
         const simpleSettings = ['load', 'maxFloorTemperature', 'calibration', 'regulatorTime'];
         const settings = ['regulatorMode', 'sensor', ...simpleSettings];
-        await this.configureAttributeReporting(settings.map((setting) => ({
-            cluster: ElkoSuperTRThermostatCluster_1.default,
+        const configureReportingPromise = this.configureAttributeReporting(settings.map((setting) => ({
+            cluster: ElkoThermostatCluster_1.default,
             attributeName: setting,
         })));
+        if (this.isFirstInit()) {
+            await configureReportingPromise;
+        }
+        else {
+            configureReportingPromise.catch(this.error);
+        }
         for (const simpleSetting of simpleSettings) {
-            this.zclNode.endpoints[this.getClusterEndpoint(ElkoSuperTRThermostatCluster_1.default) ?? 1].clusters[ElkoSuperTRThermostatCluster_1.default.NAME].on(`attr.${simpleSetting}`, async (value) => {
-                await this.setSettings({
+            this.zclNode.endpoints[this.getClusterEndpoint(ElkoThermostatCluster_1.default) ?? 1].clusters[ElkoThermostatCluster_1.default.NAME].on(`attr.${simpleSetting}`, async (value) => {
+                await this.addToPromiseQueue(() => this.setSettings({
                     [simpleSetting]: value,
+                }).catch(this.error));
+            });
+            if (initialValues) {
+                await this.setSettings({
+                    [simpleSetting]: initialValues[simpleSetting],
                 }).catch(this.error);
-            });
-            await this.setSettings({
-                [simpleSetting]: initialValues[simpleSetting],
-            });
+            }
         }
         // The regulator mode needs to update the capabilities
         const handleRegulatorReport = async (isRegulator) => {
-            await this.setSettings({
+            await this.addToPromiseQueue(() => this.setSettings({
                 regulatorFunction: isRegulator ? 'regulator' : 'thermostat',
-            });
-            if (!isRegulator) {
-                if (!this.hasCapability('target_temperature')) {
-                    await this.addCapability('target_temperature');
-                    await this.addCapability('measure_temperature');
-                }
-                if (this.hasCapability('command_regulator_duty_cycle')) {
-                    await this.removeCapability('command_regulator_duty_cycle');
-                }
-            }
-            else {
-                if (this.hasCapability('target_temperature')) {
-                    await this.removeCapability('target_temperature');
-                    await this.removeCapability('measure_temperature');
-                }
-                if (!this.hasCapability('command_regulator_duty_cycle')) {
-                    await this.addCapability('command_regulator_duty_cycle');
-                }
-            }
+            }));
+            await this.updateModeCapabilities(isRegulator);
         };
-        this.zclNode.endpoints[this.getClusterEndpoint(ElkoSuperTRThermostatCluster_1.default) ?? 1].clusters[ElkoSuperTRThermostatCluster_1.default.NAME].on('attr.regulatorMode', async (isRegulator) => {
+        this.zclNode.endpoints[this.getClusterEndpoint(ElkoThermostatCluster_1.default) ?? 1].clusters[ElkoThermostatCluster_1.default.NAME].on('attr.regulatorMode', async (isRegulator) => {
             try {
                 await handleRegulatorReport(isRegulator);
-                const currentTargetValue = await this.zclNode.endpoints[1].clusters[ElkoSuperTRThermostatCluster_1.default.NAME].readAttributes(['occupiedHeatingSetpoint']);
+                const currentTargetValue = await this.zclNode.endpoints[1].clusters[ElkoThermostatCluster_1.default.NAME].readAttributes(['occupiedHeatingSetpoint']);
                 await handleTargetReport(currentTargetValue.occupiedHeatingSetpoint);
                 if (!isRegulator) {
                     await this.setCapabilityValue('measure_temperature', this.getCapabilityValue(this.getSetting('sensor') === 'floor' ? 'display_floor_temperature' : 'display_air_temperature'));
@@ -115,34 +115,46 @@ class ElkoSuperThermostat extends homey_zigbeedriver_1.ZigBeeDevice {
                 this.error(e);
             }
         });
-        await handleRegulatorReport(initialValues.regulatorMode);
-        await handleTargetReport(initialValues.occupiedHeatingSetpoint);
+        if (initialValues) {
+            await handleRegulatorReport(initialValues.regulatorMode).catch(this.error);
+            await handleTargetReport(initialValues.occupiedHeatingSetpoint).catch(this.error);
+        }
         // The sensor mode needs to update the current temperature
         const handleSensorReport = async (value) => {
-            await this.setSettings({
+            await this.addToPromiseQueue(() => this.setSettings({
                 sensor: value,
-            });
+            }));
             if (this.hasCapability('measure_temperature')) {
                 await this.setCapabilityValue('measure_temperature', this.getCapabilityValue(value === 'floor' ? 'display_floor_temperature' : 'display_air_temperature'));
             }
         };
-        this.zclNode.endpoints[this.getClusterEndpoint(ElkoSuperTRThermostatCluster_1.default) ?? 1].clusters[ElkoSuperTRThermostatCluster_1.default.NAME].on(`attr.sensor`, (value) => handleSensorReport(value).catch(this.error));
-        await handleSensorReport(initialValues.sensor);
+        this.zclNode.endpoints[this.getClusterEndpoint(ElkoThermostatCluster_1.default) ?? 1].clusters[ElkoThermostatCluster_1.default.NAME].on(`attr.sensor`, (value) => handleSensorReport(value).catch(this.error));
+        if (initialValues) {
+            await handleSensorReport(initialValues.sensor).catch(this.error);
+        }
         /**
          * Initialise capabilities
          **/
         // We only set one capability at a time
         // Use a custom event handler to work around Homey limitations
-        await this.configureAttributeReporting([{
-                cluster: ElkoSuperTRThermostatCluster_1.default,
+        const reportingPromise = this.configureAttributeReporting([{
+                cluster: ElkoThermostatCluster_1.default,
                 attributeName: 'occupiedHeatingSetpoint',
                 minChange: 10,
             }]);
-        this.zclNode.endpoints[this.getClusterEndpoint(ElkoSuperTRThermostatCluster_1.default) ?? 1].clusters[ElkoSuperTRThermostatCluster_1.default.NAME].on('attr.occupiedHeatingSetpoint', (value) => handleTargetReport(value).catch(this.error));
-        await handleTargetReport(initialValues.occupiedHeatingSetpoint);
+        if (this.isFirstInit()) {
+            await reportingPromise;
+        }
+        else {
+            reportingPromise.catch(this.error);
+        }
+        this.zclNode.endpoints[this.getClusterEndpoint(ElkoThermostatCluster_1.default) ?? 1].clusters[ElkoThermostatCluster_1.default.NAME].on('attr.occupiedHeatingSetpoint', (value) => handleTargetReport(value).catch(this.error));
+        if (initialValues) {
+            await handleTargetReport(initialValues.occupiedHeatingSetpoint).catch(this.error);
+        }
         const handleTargetSet = async (value) => {
             const parsedValue = Math.round(value * 100);
-            await this.zclNode.endpoints[this.getClusterEndpoint(ElkoSuperTRThermostatCluster_1.default) ?? 1].clusters[ElkoSuperTRThermostatCluster_1.default.NAME].writeAttributes({
+            await this.zclNode.endpoints[this.getClusterEndpoint(ElkoThermostatCluster_1.default) ?? 1].clusters[ElkoThermostatCluster_1.default.NAME].writeAttributes({
                 occupiedHeatingSetpoint: parsedValue,
             });
         };
@@ -166,23 +178,28 @@ class ElkoSuperThermostat extends homey_zigbeedriver_1.ZigBeeDevice {
             }
             return parsedValue;
         };
-        await (0, attributeDevice_1.initReadOnlyCapability)(this, payload.zclNode, 'display_air_temperature', ElkoSuperTRThermostatCluster_1.default, 'localTemperature', value => handleAirTempReport(value).catch(this.error));
-        await (0, attributeDevice_1.initReadOnlyCapability)(this, payload.zclNode, 'display_floor_temperature', ElkoSuperTRThermostatCluster_1.default, 'externalTemperature', value => handleFloorTempReport(value).catch(this.error));
-        await (0, attributeDevice_1.initReadWriteCapability)(this, payload.zclNode, 'onoff', ElkoSuperTRThermostatCluster_1.default, 'powerStatus');
+        await (0, attributeDevice_1.initReadOnlyCapability)(this, payload.zclNode, 'display_air_temperature', ElkoThermostatCluster_1.default, 'localTemperature', value => handleAirTempReport(value).catch(this.error));
+        await (0, attributeDevice_1.initReadOnlyCapability)(this, payload.zclNode, 'display_floor_temperature', ElkoThermostatCluster_1.default, 'externalTemperature', value => handleFloorTempReport(value).catch(this.error));
+        await (0, attributeDevice_1.initReadWriteCapability)(this, payload.zclNode, 'onoff', ElkoThermostatCluster_1.default, 'powerStatus');
         const handleRelayReport = async (value) => {
             await this.setCapabilityValue('measure_power', value ? this.getSetting('load') : 0);
             return value;
         };
-        await (0, attributeDevice_1.initReadOnlyCapability)(this, payload.zclNode, 'display_heating', ElkoSuperTRThermostatCluster_1.default, 'relayState', value => handleRelayReport(value).catch(this.error));
-        await (0, attributeDevice_1.initReadWriteCapability)(this, payload.zclNode, 'command_night_mode', ElkoSuperTRThermostatCluster_1.default, 'nightSwitching');
-        await (0, attributeDevice_1.initReadWriteCapability)(this, payload.zclNode, 'command_child_lock', ElkoSuperTRThermostatCluster_1.default, 'childLock');
-        await (0, attributeDevice_1.initReadWriteCapability)(this, payload.zclNode, 'command_frost_guard', ElkoSuperTRThermostatCluster_1.default, 'frostGuard');
+        await (0, attributeDevice_1.initReadOnlyCapability)(this, payload.zclNode, 'display_heating', ElkoThermostatCluster_1.default, 'relayState', value => handleRelayReport(value).catch(this.error));
+        await (0, attributeDevice_1.initReadWriteCapability)(this, payload.zclNode, 'command_night_mode', ElkoThermostatCluster_1.default, 'nightSwitching');
+        await (0, attributeDevice_1.initReadWriteCapability)(this, payload.zclNode, 'command_child_lock', ElkoThermostatCluster_1.default, 'childLock');
+        await (0, attributeDevice_1.initReadWriteCapability)(this, payload.zclNode, 'command_frost_guard', ElkoThermostatCluster_1.default, 'frostGuard');
     }
     async onSettings(settingsEvent) {
-        await (0, ElkoSuperTRThermostatCluster_1.onSuperTrThermostatSettings)(this, settingsEvent);
+        await this.addToPromiseQueue(async () => {
+            if (settingsEvent.changedKeys.includes('load')) {
+                await this.setCapabilityValue('measure_power', this.getCapabilityValue('display_heating') ? settingsEvent.newSettings.load : 0);
+            }
+            await (0, ElkoThermostatCluster_1.onSuperTrThermostatSettings)(this, settingsEvent);
+        });
     }
     async displayText(text) {
-        await this.zclNode.endpoints[this.getClusterEndpoint(ElkoSuperTRThermostatCluster_1.default) ?? 1].clusters[ElkoSuperTRThermostatCluster_1.default.NAME].writeAttributes({
+        await this.zclNode.endpoints[this.getClusterEndpoint(ElkoThermostatCluster_1.default) ?? 1].clusters[ElkoThermostatCluster_1.default.NAME].writeAttributes({
             display_text: text,
         });
     }

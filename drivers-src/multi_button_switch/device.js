@@ -4,12 +4,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const ElkoMultiButtonDevice_1 = __importDefault(require("../../lib/device/multiSwitch/ElkoMultiButtonDevice"));
-const onOffDevice_1 = __importDefault(require("@drenso/homey-zigbee-library/capabilities/onOffDevice"));
+const onOff_1 = __importDefault(require("@drenso/homey-zigbee-library/capabilities/onOff"));
 class ElkoMultiButtonSwitchDevice extends ElkoMultiButtonDevice_1.default {
     async onNodeInit(payload) {
         await super.onNodeInit(payload);
-        await (0, onOffDevice_1.default)(this, payload.zclNode, { capabilityId: 'onoff.1', endpointId: 1 });
-        await (0, onOffDevice_1.default)(this, payload.zclNode, { capabilityId: 'onoff.2', endpointId: 2 });
+        await (0, onOff_1.default)(this, payload.zclNode, { capabilityId: 'onoff.1', endpointId: 1 });
+        await (0, onOff_1.default)(this, payload.zclNode, { capabilityId: 'onoff.2', endpointId: 2 });
+        await this.setWarning(this.homey.__("deprecatedRepair"));
     }
 }
 module.exports = ElkoMultiButtonSwitchDevice;

@@ -1,6 +1,6 @@
 ﻿File;Translation key;en;sv;no;da
 .branding/elko/_json_patch/.homeycompose/app.json;description;Smart, right?;;Smart, ikke sant?;
-.branding/elko/_json_patch/.homeycompose/app.json;name;ELKO Smart;;ELKO Smart;
+.branding/elko/_json_patch/.homeycompose/app.json;name;ELKO Smart;;;
 .branding/elko/_json_patch/drivers/connected_socket_outlet/driver.compose.json;name;Connected Socket Outlet;;Tilkoblet stikkontakt;
 .branding/elko/_json_patch/drivers/connected_socket_outlet/driver.compose.json;zigbee.learnmode.instruction;Short press the push button three times to start pairing.;;Trykk kort tre ganger på trykknappen for å starte paringen.;
 .branding/elko/_json_patch/drivers/dimmer_micromodule/driver.compose.json;name;Dimmer Micromodule;;Dimmer puck;
@@ -15,7 +15,7 @@
 .branding/elko/_json_patch/drivers/motion_switch/driver.compose.json;zigbee.learnmode.instruction;Short press the push button three times to start pairing.;;Trykk kort tre ganger på trykknappen for å starte paringen.;
 .branding/elko/_json_patch/drivers/other_connected_socket_outlet/driver.compose.json;name;Connected socket outlet;;Tilkoblet stikkontakt;
 .branding/elko/_json_patch/drivers/other_connected_socket_outlet/driver.compose.json;zigbee.learnmode.instruction;Short press the push button three times to start pairing.;;Trykk kort tre ganger på trykknappen for å starte paringen.;
-.branding/elko/_json_patch/drivers/other_dimmer/driver.compose.json;name;SmartDim 316 GLED dimmer;;SmartDim 316 GLED dimmer;
+.branding/elko/_json_patch/drivers/other_dimmer/driver.compose.json;name;SmartDim 316 GLED dimmer;;;
 .branding/elko/_json_patch/drivers/other_dimmer/driver.compose.json;zigbee.learnmode.instruction;Hold the dimmer and push button simultaneously for three seconds to start pairing.;;Hold dimmeren og trykknappen inne samtidig i tre sekunder for å starte sammenkoblingen.;
 .branding/elko/_json_patch/drivers/push_button_dimmer/driver.compose.json;name;Push-button Dimmer;;Trykk Dimmer;
 .branding/elko/_json_patch/drivers/push_button_dimmer/driver.compose.json;zigbee.learnmode.instruction;Short press the push button three times to start pairing.;;Trykk kort tre ganger på trykknappen for å starte paringen.;
@@ -23,7 +23,7 @@
 .branding/elko/_json_patch/drivers/relay_switch/driver.compose.json;zigbee.learnmode.instruction;Short press the push button three times to start pairing.;;Trykk kort tre ganger på trykknappen for å starte paringen.;
 .branding/elko/_json_patch/drivers/rotary_dimmer/driver.compose.json;name;Rotary Dimmer;;Vri dimmer;
 .branding/elko/_json_patch/drivers/rotary_dimmer/driver.compose.json;zigbee.learnmode.instruction;Short press the dimmer button three times to start pairing;;Trykk kort på dimmerknappen tre ganger for å starte sammenkoblingen;
-.branding/elko/_json_patch/drivers/shutter_micromodule/driver.compose.json;name;Shutter Micromodule;;Solskjerming  mikromodul;
+.branding/elko/_json_patch/drivers/shutter_micromodule/driver.compose.json;name;Shutter Micromodule;;Solskjerming puck;
 .branding/elko/_json_patch/drivers/shutter_micromodule/driver.compose.json;zigbee.learnmode.instruction;Short press the Setup/Reset button on the device three times to start pairing;;Trykk kort på Setup/Reset-knappen på enheten tre ganger for å starte sammenkoblingen;
 .branding/elko/_json_patch/drivers/shutter_switch/driver.compose.json;name;Shutter Switch;;Solskjermingsbryter;
 .branding/elko/_json_patch/drivers/shutter_switch/driver.compose.json;zigbee.learnmode.instruction;Short press the up button three times to start pairing.;;Trykk kort på opp-knappen tre ganger for å starte sammenkoblingen.;
@@ -35,7 +35,7 @@
 .branding/elko/_json_patch/drivers/smoke_alarm/driver.compose.json;zigbee.learnmode.instruction;Ensure the power switch on the back of the device is in the ON position, then short press the Setup/Reset button three times to start pairing.;;Sørg for at strømbryteren på baksiden av enheten er i PÅ-posisjon, og trykk deretter kort på Setup/Reset-knappen tre ganger for å starte sammenkoblingen.;
 .branding/elko/_json_patch/drivers/super_tr_thermostat/driver.compose.json;name;Super Thermostat;;Super termostat;
 .branding/elko/_json_patch/drivers/super_tr_thermostat/driver.compose.json;zigbee.learnmode.instruction;Hold the top and bottom menu buttons simultaneously for five seconds to start pairing.;;Hold den øverste og nederste menyknappen inne samtidig i fem sekunder for å starte sammenkoblingen.;
-.branding/elko/_json_patch/drivers/switch_micromodule/driver.compose.json;name;Switch Micromodule;;Bytt mikromodul;
+.branding/elko/_json_patch/drivers/switch_micromodule/driver.compose.json;name;Switch Micromodule;;Rele puck;
 .branding/elko/_json_patch/drivers/switch_micromodule/driver.compose.json;zigbee.learnmode.instruction;Short press the Setup/Reset button on the device three times to start pairing;;Trykk kort på Setup/Reset-knappen på enheten tre ganger for å starte sammenkoblingen;
 .branding/elko/_json_patch/drivers/temperature_humidity_sensor/driver.compose.json;name;Temperature & Humidity Sensor;;Temperatur- og fuktighetssensor;
 .branding/elko/_json_patch/drivers/temperature_humidity_sensor/driver.compose.json;zigbee.learnmode.instruction;Short press the Setup/Reset button on the back of the device three times to start pairing.;;Trykk kort på Setup/Reset-knappen på baksiden av enheten tre ganger for å starte sammenkoblingen.;
@@ -43,8 +43,8 @@
 .branding/elko/_json_patch/drivers/water_leakage_sensor/driver.compose.json;zigbee.learnmode.instruction;Short press the Setup/Reset button on the back of the device three times to start pairing.;;Trykk kort på Setup/Reset-knappen på baksiden av enheten tre ganger for å starte sammenkoblingen.;
 .branding/elko/_json_patch/drivers/window_door_sensor/driver.compose.json;name;Door/Window Sensor;;Dør/Vindussensor;
 .branding/elko/_json_patch/drivers/window_door_sensor/driver.compose.json;zigbee.learnmode.instruction;Short press the Setup/Reset button on the back of the device three times to start pairing.;;Trykk kort på Setup/Reset-knappen på baksiden av enheten tre ganger for å starte sammenkoblingen.;
-.branding/schneider/_json_patch/.homeycompose/app.json;description;ELKO – plain and simple!;;ELKO– enkelt og greit!;
-.branding/schneider/_json_patch/.homeycompose/app.json;name;ELKO Smart;;ELKO Smart;
+.branding/schneider/_json_patch/.homeycompose/app.json;description;Schneider Electric – plain and simple!;;Schneider Electric – enkelt og greit!;
+.branding/schneider/_json_patch/.homeycompose/app.json;name;Wiser;;;
 .branding/schneider/_json_patch/drivers/connected_socket_outlet/driver.compose.json;name;Connected Socket Outlet;;Tilkoblet stikkontakt;
 .branding/schneider/_json_patch/drivers/connected_socket_outlet/driver.compose.json;zigbee.learnmode.instruction;Short press the push button three times to start pairing.;;Trykk kort tre ganger på trykknappen for å starte paringen.;
 .branding/schneider/_json_patch/drivers/dimmer_micromodule/driver.compose.json;name;Dimmer Micromodule;;Dimmer puck;
@@ -53,8 +53,11 @@
 .branding/schneider/_json_patch/drivers/freelocate_switch/driver.compose.json;zigbee.learnmode.instruction;Short press the top right push button three times to start pairing.;;Trykk kort på trykkknappen øverst til høyre tre ganger for å starte paringen.;
 .branding/schneider/_json_patch/drivers/fuga_dimmer/driver.compose.json;name;Fuga Dimmer;;Fuga dimmer;
 .branding/schneider/_json_patch/drivers/fuga_dimmer/driver.compose.json;zigbee.learnmode.instruction;Short press the top left push button three times to start pairing.;;Trykk kort på den øverste venstre trykknappen tre ganger for å starte paringen.;
-.branding/schneider/_json_patch/drivers/fuga_switch/driver.compose.json;name;Fuga Switch;;Fuga Switch;
+.branding/schneider/_json_patch/drivers/fuga_switch/driver.compose.json;name;Fuga Switch;;;
 .branding/schneider/_json_patch/drivers/fuga_switch/driver.compose.json;zigbee.learnmode.instruction;Short press the top left push button three times to start pairing.;;Trykk kort på den øverste venstre trykknappen tre ganger for å starte paringen.;
+.branding/schneider/_json_patch/drivers/fuga_switch_split/driver.compose.json;name;Fuga Switch;;;
+.branding/schneider/_json_patch/drivers/fuga_switch_split/driver.compose.json;zigbee.devices.secondChannel.name;Fuga Switch (2);;;
+.branding/schneider/_json_patch/drivers/fuga_switch_split/driver.compose.json;zigbee.learnmode.instruction;Short press the top left push button three times to start pairing.;;Trykk kort på den øverste venstre trykknappen tre ganger for å starte paringen.;
 .branding/schneider/_json_patch/drivers/motion_dimmer/driver.compose.json;name;Motion Dimmer;;PIR med dimmer;
 .branding/schneider/_json_patch/drivers/motion_dimmer/driver.compose.json;zigbee.learnmode.instruction;Short press the push button three times to start pairing.;;Trykk kort tre ganger på trykknappen for å starte paringen.;
 .branding/schneider/_json_patch/drivers/motion_sensor/driver.compose.json;name;Motion Sensor;;Bevegelsessensor;
@@ -93,25 +96,43 @@
 .branding/schneider/_json_patch/drivers/smart_plug_16a/driver.compose.json;zigbee.learnmode.instruction;Short press the push button three times to start pairing.;;Trykk kort tre ganger på trykknappen for å starte paringen.;
 .branding/schneider/_json_patch/drivers/smoke_alarm/driver.compose.json;name;Smoke Alarm;;Røykvarsler;
 .branding/schneider/_json_patch/drivers/smoke_alarm/driver.compose.json;zigbee.learnmode.instruction;Ensure the power switch on the back of the device is in the ON position, then short press the Setup/Reset button three times to start pairing.;;Sørg for at strømbryteren på baksiden av enheten er i PÅ-posisjon, og trykk deretter kort på Setup/Reset-knappen tre ganger for å starte sammenkoblingen.;
-.branding/schneider/_json_patch/drivers/switch_micromodule/driver.compose.json;name;Switch Micromodule;;Bytt mikromodul;
+.branding/schneider/_json_patch/drivers/switch_micromodule/driver.compose.json;name;Switch Micromodule;;Rele puck;
 .branding/schneider/_json_patch/drivers/switch_micromodule/driver.compose.json;zigbee.learnmode.instruction;Short press the Setup/Reset button on the device three times to start pairing;;Trykk kort på Setup/Reset-knappen på enheten tre ganger for å starte sammenkoblingen;
 .branding/schneider/_json_patch/drivers/temperature_humidity_sensor/driver.compose.json;name;Temperature & Humidity Sensor;;Temperatur- og fuktighetssensor;
 .branding/schneider/_json_patch/drivers/temperature_humidity_sensor/driver.compose.json;zigbee.learnmode.instruction;Short press the Setup/Reset button on the back of the device three times to start pairing.;;Trykk kort på Setup/Reset-knappen på baksiden av enheten tre ganger for å starte sammenkoblingen.;
 .branding/schneider/_json_patch/drivers/two_gang_dimmer/driver.compose.json;name;2-Channel Dimmer;;2-kanals dimmer;
 .branding/schneider/_json_patch/drivers/two_gang_dimmer/driver.compose.json;zigbee.learnmode.instruction;Short press the top right push button three times to start pairing.;;Trykk kort på trykkknappen øverst til høyre tre ganger for å starte paringen.;
+.branding/schneider/_json_patch/drivers/two_gang_dimmer_split/driver.compose.json;name;2-Channel Dimmer;;2-kanals dimmer;
+.branding/schneider/_json_patch/drivers/two_gang_dimmer_split/driver.compose.json;zigbee.devices.secondChannel.name;2-Channel Dimmer (2);;2-kanals dimmer (2);
+.branding/schneider/_json_patch/drivers/two_gang_dimmer_split/driver.compose.json;zigbee.learnmode.instruction;Short press the top right push button three times to start pairing.;;Trykk kort på trykkknappen øverst til høyre tre ganger for å starte paringen.;
 .branding/schneider/_json_patch/drivers/two_gang_eswitch/driver.compose.json;name;2-Channel Electronic Switch;;2-kanals elektronisk bryter;
 .branding/schneider/_json_patch/drivers/two_gang_eswitch/driver.compose.json;zigbee.learnmode.instruction;Short press the top right push button three times to start pairing.;;Trykk kort på trykkknappen øverst til høyre tre ganger for å starte paringen.;
+.branding/schneider/_json_patch/drivers/two_gang_eswitch_split/driver.compose.json;name;2-Channel Electronic Switch;;2-kanals elektronisk bryter;
+.branding/schneider/_json_patch/drivers/two_gang_eswitch_split/driver.compose.json;zigbee.devices.secondChannel.name;2-Channel Electronic Switch (2);;2-kanals elektronisk bryter (2);
+.branding/schneider/_json_patch/drivers/two_gang_eswitch_split/driver.compose.json;zigbee.learnmode.instruction;Short press the top right push button three times to start pairing.;;Trykk kort på trykkknappen øverst til høyre tre ganger for å starte paringen.;
 .branding/schneider/_json_patch/drivers/two_gang_switch/driver.compose.json;name;2-Channel Relay Switch;;2-kanals relébryter;
 .branding/schneider/_json_patch/drivers/two_gang_switch/driver.compose.json;zigbee.learnmode.instruction;Short press the top right push button three times to start pairing.;;Trykk kort på trykkknappen øverst til høyre tre ganger for å starte paringen.;
+.branding/schneider/_json_patch/drivers/two_gang_switch_split/driver.compose.json;name;2-Channel Relay Switch;;2-kanals relébryter;
+.branding/schneider/_json_patch/drivers/two_gang_switch_split/driver.compose.json;zigbee.devices.secondChannel.name;2-Channel Relay Switch (2);;2-kanals relébryter (2);
+.branding/schneider/_json_patch/drivers/two_gang_switch_split/driver.compose.json;zigbee.learnmode.instruction;Short press the top right push button three times to start pairing.;;Trykk kort på trykkknappen øverst til høyre tre ganger for å starte paringen.;
 .branding/schneider/_json_patch/drivers/water_leakage_sensor/driver.compose.json;name;Water Leakage Sensor;;Vannlekkasjesensor;
 .branding/schneider/_json_patch/drivers/water_leakage_sensor/driver.compose.json;zigbee.learnmode.instruction;Short press the Setup/Reset button on the back of the device three times to start pairing.;;Trykk kort på Setup/Reset-knappen på baksiden av enheten tre ganger for å starte sammenkoblingen.;
 .branding/schneider/_json_patch/drivers/window_door_sensor/driver.compose.json;name;Door/Window Sensor;;Dør/Vindussensor;
 .branding/schneider/_json_patch/drivers/window_door_sensor/driver.compose.json;zigbee.learnmode.instruction;Short press the Setup/Reset button on the back of the device three times to start pairing.;;Trykk kort på Setup/Reset-knappen på baksiden av enheten tre ganger for å starte sammenkoblingen.;
+.homeycompose/locales;deprecatedRepair;A new version of this device is available. Pair again to get improved functionality.;En ny version av den här enheten är tillgänglig. Para ihop igen för att få förbättrad funktionalitet.;En ny versjon av denne enheten er tilgjengelig. Par igjen for å få forbedret funksjonalitet.;En ny version af denne enhed er tilgængelig. Par igen for at få forbedret funktionalitet.
+.homeycompose/locales;dimmer.invalidBallastLevel;Invalid ballast level;Ogiltig ballastnivå;Ugyldig ballastnivå;Ugyldigt ballastniveau
+.homeycompose/locales;multiButton.buttonSettingResult;New modes result in __switchConfig__ configuration, __heldButton__ held button support and __longRelease__ long press support;;Nye moduser resulterer i __switchConfig__ konfigurering, __heldButton__ hold knapp support og __longRelease__ langt trykk support;Nye tilstande resulterer i __switchConfig__ konfiguration, __heldButton__ holdt knap understøttelse og __longRelease__ langt tryk understøttelse
+.homeycompose/locales;multiButton.errorStandardSupport;The Standard Shutter and Toggle actions are only supported in a 4-button configuration!;Funktionerna sluta och växla stöds endast i en konfiguration med 4 knappar!;Standard solskjerming og bryter-handlinger støttes bare i en 4-knapps konfigurasjon!;Standard solafskærmnings og omskiftningshandlinger understøttes kun i en 4-knap-konfiguration!
+.homeycompose/locales;multiButton.errorThreeButton;Endpoint 23 and 24 need to be either both active or both inactive!;Slutpunkt 23 och 24 måste antingen vara aktiva eller båda inaktiva!;Endepunkt 23 og 24 må enten begge være aktive eller begge være inaktive!;Endpoint 23 og 24 skal begge være enten aktive eller inaktive!
+.homeycompose/locales;multiButton.errorUnexpectedConfig;Unexpected button configuration;Oväntad knappkonfiguration;Uventet knappkonfigurasjon;Uventet knapkonfiguration
+.homeycompose/locales;multiButton.errorUnexpectedEndpoint;Unexpected endpoint for this button configuration;Oväntad slutpunkt för denna knappkonfiguration;Uventet endepunkt for denne knappkonfigurasjonen;Uventet slutpunkt for denne knapkonfiguration
+.homeycompose/locales;multiButton.errorUnsupportedConfig;Unsupported button configuration;Osupporterad knappkonfiguration;Ikke-støttet knappkonfigurasjon;Ikke -understøttet knapkonfiguration
+.homeycompose/locales;thermostat.invalidBrightness;Invalid screen brightness;Ogiltig skärmljusstyrka;Ugyldig skjermlysstyrke;Ugyldig skærmlysstyrke
 .homeycompose/capabilities/command_child_lock.json;title;Child Lock;Barnlås;Barnesikring;Børne lås
 .homeycompose/capabilities/command_frost_guard.json;title;Frost Guard;Frostvakt;Frostsikring;Frost beskyttelse
 .homeycompose/capabilities/command_night_mode.json;title;Night Mode;Nattläge;Nattmodus;Nattilstand
 .homeycompose/capabilities/command_regulator_duty_cycle.json;title;Duty cycle;Arbetscykel;Arbeidssyklus;Driftscyklus
-.homeycompose/capabilities/command_regulator_duty_cycle.json;units;%;;%;
+.homeycompose/capabilities/command_regulator_duty_cycle.json;units;%;;;
 .homeycompose/capabilities/display_air_temperature.json;desc;Air Temperature in degrees Celsius (°C);Lufttemperatur i Celsius (°C);Lufttemperatur i grader Celsius (°C);Lufttemperatur i grader Celsius (° C)
 .homeycompose/capabilities/display_air_temperature.json;title;Air Temperature;Lufttemperatur;Lufttemperatur;Lufttemperatur
 .homeycompose/capabilities/display_air_temperature.json;units;°C;;;° C.
@@ -125,6 +146,13 @@
 .homeycompose/capabilities/display_lifetime.json;units;Years;År;År;Flere år
 .homeycompose/capabilities/supports_held_buttons.json;title;Supports Held Button Detection;Supporterar detektion av intryckt knapp;Støtter deteksjon av holdt knapp;Holdt knap understøttelse
 .homeycompose/capabilities/supports_long_release.json;title;Supports Long Release Detection;Supporterar lång knapptryckning;Støtter deteksjon av lang slipp-deteksjon;Understøtter detektion med lang frigivelse
+.homeycompose/capabilities/supports_short_release.json;title;Supports Short Release Detection;;;
+.homeycompose/drivers/settings/ballastMaxConfiguration.json;hint;The maximum output level.;Den maximala utgångsnivån.;Maksimalt utgangsnivå.;Det maksimale udgangsniveau.
+.homeycompose/drivers/settings/ballastMaxConfiguration.json;label;Maximum level;Maximal nivå;Maksimalt nivå;Maksimal niveau
+.homeycompose/drivers/settings/ballastMaxConfiguration.json;units;%;;;
+.homeycompose/drivers/settings/ballastMinConfiguration.json;hint;The minimum output level.;Minsta uteffektnivå.;Minimum utgangsnivå.;Minimum udgangsniveau.
+.homeycompose/drivers/settings/ballastMinConfiguration.json;label;Minimum level;Miniminivå;Minimumsnivå;Minimum niveau
+.homeycompose/drivers/settings/ballastMinConfiguration.json;units;%;;;
 .homeycompose/drivers/settings/switchConfiguration.json;values[0].label;Light;Ljus;Lys;Lys
 .homeycompose/drivers/settings/switchConfiguration.json;values[10].label;Dimmer Toggle;Dimmerjustering;Dimmer (bytte);Dæmper skift
 .homeycompose/drivers/settings/switchConfiguration.json;values[11].label;Inactive;Inaktiv;Inaktiv;Inaktiv
@@ -173,12 +201,6 @@
 .homeycompose/flow/triggers/multi_button_short_released.json;title;Pressed button;Intryckt brytare;Trykket knapp;Tryk på knap
 .homeycompose/flow/triggers/multi_button_short_released.json;titleFormatted;Pressed button [[button]];Intryckt brytare [[button]];Trykket knapp [[button]];Tryk på knap [[button]]
 .homeycompose/flow/triggers/multi_button_short_released.json;tokens[0].title;Button;Brytare;Knapp;Knap
-.homeycompose/locales;multiButton.buttonSettingResult;New modes result in __switchConfig__ configuration, __heldButton__ held button support and __longRelease__ long press support;;Nye moduser resulterer i __switchConfig__ konfigurering, __heldButton__ hold knapp support og __longRelease__ langt trykk support;Nye tilstande resulterer i __switchConfig__ konfiguration, __heldButton__ holdt knap understøttelse og __longRelease__ langt tryk understøttelse
-.homeycompose/locales;multiButton.errorStandardSupport;The Standard Shutter and Toggle actions are only supported in a 4-button configuration!;Funktionerna sluta och växla stöds endast i en konfiguration med 4 knappar!;Standard solskjerming og bryter-handlinger støttes bare i en 4-knapps konfigurasjon!;Standard solafskærmnings og omskiftningshandlinger understøttes kun i en 4-knap-konfiguration!
-.homeycompose/locales;multiButton.errorThreeButton;Endpoint 23 and 24 need to be either both active or both inactive!;Slutpunkt 23 och 24 måste antingen vara aktiva eller båda inaktiva!;Endepunkt 23 og 24 må enten begge være aktive eller begge være inaktive!;Endpoint 23 og 24 skal begge være enten aktive eller inaktive!
-.homeycompose/locales;multiButton.errorUnexpectedConfig;Unexpected button configuration;Oväntad knappkonfiguration;Uventet knappkonfigurasjon;Uventet knapkonfiguration
-.homeycompose/locales;multiButton.errorUnexpectedEndpoint;Unexpected endpoint for this button configuration;Oväntad slutpunkt för denna knappkonfiguration;Uventet endepunkt for denne knappkonfigurasjonen;Uventet slutpunkt for denne knapkonfiguration
-.homeycompose/locales;multiButton.errorUnsupportedConfig;Unsupported button configuration;Osupporterad knappkonfiguration;Ikke-støttet knappkonfigurasjon;Ikke -understøttet knapkonfiguration
 drivers-src/motion_dimmer/driver.settings.compose.json;[0].hint;Operation mode of the sensor;Driftsläge för sensor;Driftsmodus for sensoren;Operationstilstand for sensoren
 drivers-src/motion_dimmer/driver.settings.compose.json;[0].label;Occupancy Operation;Rörelsedetektion;Okkupert aksjon;Bevægelsesindstillinger
 drivers-src/motion_dimmer/driver.settings.compose.json;[0].values[0].label;Manually turned on and off with the button only;Hanteras manuellt med tryckknappen;Manuelt slått av og på kun med knappen;Manuelt tændt og slukket med knappen
@@ -202,7 +224,7 @@ drivers-src/motion_dimmer/driver.settings.compose.json;[6].hint;The sensitivity 
 drivers-src/motion_dimmer/driver.settings.compose.json;[6].label;Sensitivity;;Sensitiviteten;
 drivers-src/motion_sensor/driver.settings.compose.json;[0].hint;How many seconds the sensor needs to not see movement before being able to change from occupied to unoccupied again. If any movement is detected in this period, the timeout is restarted.;Hur många sekunder som behöver passera där sensorn ej detekterar rörelse innan den skiftar från detekterad till ej detekterad. Ifall rörelse detekteras under denna tidsperiod, startar nedräkningen om.;Hvor mange sekunder sensoren ikke skal oppdage bevegelse før den kan endre seg fra opptatt til uopptatt igjen. Hvis det oppdages bevegelse i løpet av denne perioden, startes timeouten på nytt.;Hvor mange sekunder er sensoren ikke at se bevægelse, før den kan ændre sig fra bevægelse til ingen bevægelse. Hvis der opdages nogen bevægelse i denne periode, genstartes timeout.
 drivers-src/motion_sensor/driver.settings.compose.json;[0].label;Occupied Timeout;Rörelse detekterad - timeout;Okkupert tidsavbrudd;Bevægelses timeout
-drivers-src/motion_sensor/driver.settings.compose.json;[1].label;Sensitivity Level;;Sensitivitetsnivå ;
+drivers-src/motion_sensor/driver.settings.compose.json;[1].label;Sensitivity Level;;Sensitivitetsnivå;
 drivers-src/motion_switch/driver.settings.compose.json;[0].hint;Operation mode of the sensor;Detektorns driftsläge;Driftsmodus for sensoren.;Funktionstilstand for sensoren
 drivers-src/motion_switch/driver.settings.compose.json;[0].label;Occupancy Operation;Drift vid detekterad rörelse;Okkupert operasjon;Bevægelsesfunktion
 drivers-src/motion_switch/driver.settings.compose.json;[0].values[0].label;Manually turned on and off with the button only;Manuellt till- och frånslag enbart via tryckknappen;Manuelt slått av og på kun med knappen;Manuelt tændt og slukket med knappen
@@ -231,6 +253,11 @@ drivers-src/multi_button_switch/driver.settings.compose.json;[0].children[1].lab
 drivers-src/multi_button_switch/driver.settings.compose.json;[0].children[2].label;Mode for endpoint 23;Läge för slutstation 23;Modus for endepunkt 23;Mode til slutpunkt 23
 drivers-src/multi_button_switch/driver.settings.compose.json;[0].children[3].label;Mode for endpoint 24;Läge för slutstation 24;Modus for endepunkt 24;Mode til slutpunkt 24
 drivers-src/multi_button_switch/driver.settings.compose.json;[0].label;CAUTION: Not all configurations work with the full Homey functionality. It is recommended to use 4 Dimmer actions, and to avoid using the (inverted) Light and Scene actions.;OBSERVERA: Det är inte samtliga konfigurationer som fungerar fullständigt i Homey-integrationen.;ADVARSEL: Ikke alle konfigurasjoner fungerer med full Homey-funksjonalitet. Det anbefales å bruke 4 Dimmer-handlinger og å unngå å bruke Lys- og Scene-handlinger.;FORSIGTIG: Ikke alle konfigurationer fungerer med den fulde Homey funktionalitet. Det anbefales at bruge 4 dæmpere handlinger og for at undgå at bruge de (omvendte) lys- og scenehandlinger.
+drivers-src/multi_button_switch_split/driver.settings.compose.json;[0].children[0].label;Mode for endpoint 21;Läge för slutstation 21;Modus for endepunkt 21;Mode til slutpunkt 21
+drivers-src/multi_button_switch_split/driver.settings.compose.json;[0].children[1].label;Mode for endpoint 22;Läge för slutstation 22;Modus for endepunkt 22;Mode til slutpunkt 22
+drivers-src/multi_button_switch_split/driver.settings.compose.json;[0].children[2].label;Mode for endpoint 23;Läge för slutstation 23;Modus for endepunkt 23;Mode til slutpunkt 23
+drivers-src/multi_button_switch_split/driver.settings.compose.json;[0].children[3].label;Mode for endpoint 24;Läge för slutstation 24;Modus for endepunkt 24;Mode til slutpunkt 24
+drivers-src/multi_button_switch_split/driver.settings.compose.json;[0].label;CAUTION: Not all configurations work with the full Homey functionality. It is recommended to use 4 Dimmer actions, and to avoid using the (inverted) Light and Scene actions.;OBSERVERA: Det är inte samtliga konfigurationer som fungerar fullständigt i Homey-integrationen.;ADVARSEL: Ikke alle konfigurasjoner fungerer med full Homey-funksjonalitet. Det anbefales å bruke 4 Dimmer-handlinger og å unngå å bruke Lys- og Scene-handlinger.;FORSIGTIG: Ikke alle konfigurationer fungerer med den fulde Homey funktionalitet. Det anbefales at bruge 4 dæmpere handlinger og for at undgå at bruge de (omvendte) lys- og scenehandlinger.
 drivers-src/one_gang_dimmer/driver.settings.compose.json;[0].children[0].label;Mode for endpoint 21;Läge för slutstation 21;Modus for endepunkt 21;Mode til slutpunkt 21
 drivers-src/one_gang_dimmer/driver.settings.compose.json;[0].label;CAUTION: Not all configurations work with the full Homey functionality. It is recommended to use a Schneider Shutter action to reroute all actions via Homey, and a Dimmer action for full control otherwise.;OBSERVERA: Det kan finnas konfigurationer som inte fungerar fullständigt i Homey-integrationen.;ADVARSEL: Ikke alle konfigurasjoner fungerer med full Homey-funksjonalitet. Det anbefales å bruke en ELKO solskjermingsbryter-handling for å omdirigere alle handlinger via Homey, og en Dimmer-handling for full kontroll i andre tilfeller.;FORSIGTIG: Ikke alle konfigurationer fungerer med den fulde Homey funktionalitet. Det anbefales at bruge en Schneider -lukkerhandling til at omdirigere alle handlinger via Homey og en svagt handling til fuld kontrol ellers.
 drivers-src/one_gang_shutter/driver.settings.compose.json;[0].children[0].label;Mode for endpoint 21;Läge för slutstation 21;Modus for endepunkt 21;Mode til slutpunkt 21
@@ -320,12 +347,23 @@ drivers-src/thermostat/driver.settings.compose.json;[4].values[3].label;12kΩ;;;
 drivers-src/thermostat/driver.settings.compose.json;[4].values[4].label;15kΩ;;;
 drivers-src/thermostat/driver.settings.compose.json;[4].values[5].label;33kΩ;;;
 drivers-src/thermostat/driver.settings.compose.json;[4].values[6].label;47kΩ;;;
+drivers-src/thermostat/driver.settings.compose.json;[5].label;Screen brightness;;;
+drivers-src/thermostat/driver.settings.compose.json;[6].hint;The brightness of the screen when it is inactive. This needs to be less than the active brightness.;;;
+drivers-src/thermostat/driver.settings.compose.json;[6].label;Inactive screen brightness;;;
+drivers-src/thermostat/driver.settings.compose.json;[7].hint;The time in seconds until the screen becomes inactive.;;;
+drivers-src/thermostat/driver.settings.compose.json;[7].label;Activity Timeout;;;
 drivers-src/two_gang_dimmer/driver.settings.compose.json;[0].children[0].label;Mode for endpoint 21;Läge för slutstation 21;Modus for endepunkt 21;Mode til slutpunkt 21
 drivers-src/two_gang_dimmer/driver.settings.compose.json;[0].children[1].label;Mode for endpoint 22;Läge för slutstation 22;Modus for endepunkt 22;Mode til slutpunkt 22
 drivers-src/two_gang_dimmer/driver.settings.compose.json;[0].label;CAUTION: Not all configurations work with the full Homey functionality. It is recommended to use Schneider Shutter actions to reroute all actions via Homey, and Dimmer actions for full control otherwise.;OBSERVERA: Det kan finnas konfigurationer som inte fungerar fullständigt i Homey-integrationen.;Obs! Ikke alle konfigurasjoner fungerer med full Homey-funksjonalitet. Det anbefales å bruke ELKO Smart solskjermingsbryter-aksjoner for å omdirigere alle handlinger via Homey, og Dimmer-aksjoner for full kontroll i andre tilfeller.;FORSIGTIG: Ikke alle konfigurationer fungerer med den fulde Homey funktionalitet. Det anbefales at bruge Schneider -solafskærmningshandlinger til at omdirigere alle handlinger via Homey og dæmpere handlinger til fuld kontrol ellers.
+drivers-src/two_gang_dimmer_split/driver.settings.compose.json;[0].children[0].label;Mode for endpoint 21;Läge för slutstation 21;Modus for endepunkt 21;Mode til slutpunkt 21
+drivers-src/two_gang_dimmer_split/driver.settings.compose.json;[0].children[1].label;Mode for endpoint 22;Läge för slutstation 22;Modus for endepunkt 22;Mode til slutpunkt 22
+drivers-src/two_gang_dimmer_split/driver.settings.compose.json;[0].label;CAUTION: Not all configurations work with the full Homey functionality. It is recommended to use Schneider Shutter actions to reroute all actions via Homey, and Dimmer actions for full control otherwise.;OBSERVERA: Det kan finnas konfigurationer som inte fungerar fullständigt i Homey-integrationen.;Obs! Ikke alle konfigurasjoner fungerer med full Homey-funksjonalitet. Det anbefales å bruke ELKO Smart solskjermingsbryter-aksjoner for å omdirigere alle handlinger via Homey, og Dimmer-aksjoner for full kontroll i andre tilfeller.;FORSIGTIG: Ikke alle konfigurationer fungerer med den fulde Homey funktionalitet. Det anbefales at bruge Schneider -solafskærmningshandlinger til at omdirigere alle handlinger via Homey og dæmpere handlinger til fuld kontrol ellers.
 drivers-src/two_gang_switch/driver.settings.compose.json;[0].children[0].label;Mode for endpoint 21;Läge för slutstation 21;Modus for endepunkt 21;Mode til slutpunkt 21
 drivers-src/two_gang_switch/driver.settings.compose.json;[0].children[1].label;Mode for endpoint 22;Läge för slutstation 22;Modus for endepukt 22;Mode til slutpunkt 22
 drivers-src/two_gang_switch/driver.settings.compose.json;[0].label;CAUTION: Not all configurations work with the full Homey functionality. It is recommended to use Schneider Shutter actions to reroute all actions via Homey, or Dimmer actions to still have a short press turn the outputs on/off;OBSERVERA: Det kan finnas konfigurationer som inte fungerar fullständigt i Homey-integrationen.;FARE: Ikke alle konfigurasjoner fungerer med full Homey-funksjonalitet. Det anbefales å bruke ELKO Solskjermingsbryter-aksjoner for å omdirigere alle handlinger via Homey, eller Dimmer-aksjoner for å fortsatt kunne slå utgangene av/på med en kort trykk.;FORSIGTIG: Ikke alle konfigurationer fungerer med den fulde Homey funktionalitet. Det anbefales at bruge Schneider -lukkerhandlinger til at omdirigere alle handlinger via Homey eller dæmpere handlinger for stadig at få en kort presse til at slå output til/fra
+drivers-src/two_gang_switch_split/driver.settings.compose.json;[0].children[0].label;Mode for endpoint 21;Läge för slutstation 21;Modus for endepunkt 21;Mode til slutpunkt 21
+drivers-src/two_gang_switch_split/driver.settings.compose.json;[0].children[1].label;Mode for endpoint 22;Läge för slutstation 22;Modus for endepukt 22;Mode til slutpunkt 22
+drivers-src/two_gang_switch_split/driver.settings.compose.json;[0].label;CAUTION: Not all configurations work with the full Homey functionality. It is recommended to use Schneider Shutter actions to reroute all actions via Homey, or Dimmer actions to still have a short press turn the outputs on/off;OBSERVERA: Det kan finnas konfigurationer som inte fungerar fullständigt i Homey-integrationen.;FARE: Ikke alle konfigurasjoner fungerer med full Homey-funksjonalitet. Det anbefales å bruke ELKO Solskjermingsbryter-aksjoner for å omdirigere alle handlinger via Homey, eller Dimmer-aksjoner for å fortsatt kunne slå utgangene av/på med en kort trykk.;FORSIGTIG: Ikke alle konfigurationer fungerer med den fulde Homey funktionalitet. Det anbefales at bruge Schneider -lukkerhandlinger til at omdirigere alle handlinger via Homey eller dæmpere handlinger for stadig at få en kort presse til at slå output til/fra
 drivers-src/wireless_switch/driver.settings.compose.json;[0].children[0].label;Mode for endpoint 21;Läge för slutstation 21;Modus for endepunkt 21;Mode til slutpunkt 21
 drivers-src/wireless_switch/driver.settings.compose.json;[0].children[1].label;Mode for endpoint 22;Läge för slutstation 22;Modus for endepunkt 22;Mode til slutpunkt 22
 drivers-src/wireless_switch/driver.settings.compose.json;[0].children[2].label;Mode for endpoint 23;Läge för slutstation 23;Modus for endepunkt 23;Mode til slutpunkt 23

@@ -29,12 +29,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const homey_zigbeedriver_1 = require("homey-zigbeedriver");
 const zigbee_clusters_1 = require("zigbee-clusters");
 const ElkoOnOffCluster_1 = __importStar(require("../../lib/cluster/ElkoOnOffCluster"));
-const onOffDevice_1 = __importDefault(require("@drenso/homey-zigbee-library/capabilities/onOffDevice"));
+const onOff_1 = __importDefault(require("@drenso/homey-zigbee-library/capabilities/onOff"));
 zigbee_clusters_1.Cluster.addCluster(ElkoOnOffCluster_1.default);
 class ElkoSwitch extends homey_zigbeedriver_1.ZigBeeDevice {
     async onNodeInit(payload) {
         await super.onNodeInit(payload);
-        await (0, onOffDevice_1.default)(this, payload.zclNode);
+        if (this.getClass() !== 'light') {
+            await this.setClass('light').catch(() => this.error('Failed to migrate the device class to light'));
+        }
+        await (0, onOff_1.default)(this, payload.zclNode);
     }
     async onSettings(settingsEvent) {
         await (0, ElkoOnOffCluster_1.onOnOffClusterSettings)(this, settingsEvent);
